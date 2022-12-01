@@ -34,6 +34,9 @@ export function Home() {
             </div>
           </div>
         </div>
+        <div className="navbarImage">
+          <img src="/src/assets/imagem-header.png" />
+        </div>
       </HeaderContainer>
     </div>
   )

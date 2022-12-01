@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
 export const HeaderContainer = styled.header`
+  display: flex;
+  flex-direction: row;
   padding: 5.875rem 10rem;
   height: 544px;
 
@@ -65,6 +67,17 @@ export const HeaderContainer = styled.header`
           }
         }
       }
+    }
+  }
+  .navbarImage {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    img {
+      height: 90%;
+      width: auto;
     }
   }
 `
