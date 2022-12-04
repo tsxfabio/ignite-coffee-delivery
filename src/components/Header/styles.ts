@@ -10,7 +10,7 @@ export const NavContainer = styled.header`
     align-items: center;
     justify-content: space-between;
 
-    background-color: ${(props) => props.theme['white-100']};
+    background-color: ${(props) => props.theme['white-200']};
 
     padding: 0 10rem;
     height: 6.5rem;
