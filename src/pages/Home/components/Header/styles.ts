@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const HeaderContainer = styled.header`
   display: flex;
   flex-direction: row;
-  padding: 5.875rem 10rem;
+  padding: 5.875rem 0;
   height: 544px;
 
   .titleAndDescriptionHeader {

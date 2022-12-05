@@ -12,7 +12,7 @@ export const NavContainer = styled.header`
 
     background-color: ${(props) => props.theme['white-200']};
 
-    padding: 0 10rem;
+    padding: 0;
     height: 6.5rem;
     width: 100%;
 
