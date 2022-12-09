@@ -8,7 +8,6 @@ import { Header } from './components/Header'
 export function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
-      <Header />
       <BrowserRouter>
         <Router />
       </BrowserRouter>

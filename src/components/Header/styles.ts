@@ -27,7 +27,7 @@ export const NavContainer = styled.header`
   }
 `
 
-export const BaseMenuLink = styled.a`
+export const BaseMenuLink = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
