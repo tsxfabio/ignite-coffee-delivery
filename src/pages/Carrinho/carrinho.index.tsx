@@ -1,7 +1,9 @@
+import { Titles } from '../../components/Titles/Titles.index'
+
 export function Carrinho() {
   return (
     <div>
-      <h1>Carrinho</h1>
+      <Titles title="Complete seu pedido" />
     </div>
   )
 }
