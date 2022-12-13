@@ -6,7 +6,7 @@ export function CoffeeCard() {
     <CardContainer>
       <div className="card-elements">
         <img
-          src="https://source.unsplash.com/random/"
+          src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=935&q=80"
           width="120px"
           height="120px"
         />

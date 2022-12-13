@@ -8,10 +8,3 @@ export const MainContainer = styled.main`
     flex-wrap: wrap;
   }
 `
-
-export const SubTitle = styled.h2`
-  font-size: 2rem;
-  font-weight: 800;
-  font-family: 'Baloo 2', cursive;
-  margin-bottom: 2rem;
-`
