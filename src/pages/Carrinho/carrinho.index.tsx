@@ -1,6 +1,7 @@
 import { MapPinLine } from 'phosphor-react'
 import { Titles } from '../../components/Titles/Titles.index'
 import { PageContainer } from './carrinho.styles'
+import { FormEndereco } from './FormEndereco/FormEndereco.index'
 
 export function Carrinho() {
   return (
@@ -14,6 +15,7 @@ export function Carrinho() {
             <span>Informe o endereço onde deseja receber seu pedido</span>
           </div>
         </div>
+        <FormEndereco />
       </div>
     </PageContainer>
   )

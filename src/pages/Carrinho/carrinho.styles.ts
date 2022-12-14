@@ -5,6 +5,7 @@ export const PageContainer = styled.main`
 
   .simpleContainer {
     display: flex;
+    flex-direction: column;
 
     width: 60%;
     border-radius: 6px;
@@ -15,6 +16,7 @@ export const PageContainer = styled.main`
       display: flex;
       flex-direction: row;
       gap: 0.5rem;
+      margin-bottom: 2rem;
 
       span {
         display: block;
