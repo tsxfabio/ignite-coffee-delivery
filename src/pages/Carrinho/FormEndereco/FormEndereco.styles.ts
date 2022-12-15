@@ -16,6 +16,7 @@ export const FromContainer = styled.form`
   input {
     padding: 0.75rem;
     border: 1px solid ${(props) => props.theme['gray-300']};
+    background-color: ${(props) => props.theme['gray-300']};
     border-radius: 4px;
   }
 
