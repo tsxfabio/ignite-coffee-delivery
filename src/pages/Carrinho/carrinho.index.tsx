@@ -1,4 +1,4 @@
-import { MapPinLine } from 'phosphor-react'
+import { CurrencyDollar, MapPinLine } from 'phosphor-react'
 import { Titles } from '../../components/Titles/Titles.index'
 import { PageContainer } from './carrinho.styles'
 import { FormEndereco } from './FormEndereco/FormEndereco.index'
@@ -16,6 +16,11 @@ export function Carrinho() {
           </div>
         </div>
         <FormEndereco />
+      </div>
+      <div className="metodoPagamentoContainer">
+        <div className="titlemetodoPagamentoContainer">
+          <CurrencyDollar size={22} />
+        </div>
       </div>
     </PageContainer>
   )

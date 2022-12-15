@@ -13,6 +13,12 @@ export const FromContainer = styled.form`
     width: 100%;
   }
 
+  input {
+    padding: 0.75rem;
+    border: 1px solid ${(props) => props.theme['gray-300']};
+    border-radius: 4px;
+  }
+
   div {
     display: flex;
     flex-direction: row;
