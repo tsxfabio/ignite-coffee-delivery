@@ -87,7 +87,7 @@ export const PageContainer = styled.main`
         flex-direction: row;
         justify-content: space-between;
 
-        div {
+        button {
           display: flex;
           flex-direction: row;
           justify-content: start;
@@ -96,12 +96,21 @@ export const PageContainer = styled.main`
           width: 32.5%;
           gap: 0.25rem;
           border-radius: 6px;
+          border: 1px solid transparent;
           padding: 1rem 0 1rem 1rem;
 
           font-size: 0.75rem;
           font-family: 'Roboto', sans-serif;
           text-transform: uppercase;
+          cursor: pointer;
           background-color: ${(props) => props.theme['gray-300']};
+          transition: all 0.1s ease-in-out;
+
+          :hover,
+          &.active {
+            border: 1px solid ${(props) => props.theme['purple-500']};
+            background: ${(props) => props.theme['purple-100']};
+          }
         }
 
         .iconsPagamento {

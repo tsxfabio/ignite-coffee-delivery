@@ -5,11 +5,28 @@ import {
   MapPinLine,
   Money,
 } from 'phosphor-react'
+import { useState } from 'react'
 import { Titles } from '../../components/Titles/Titles.index'
 import { PageContainer } from './carrinho.styles'
 import { FormEndereco } from './FormEndereco/FormEndereco.index'
 
+interface Pagamentos {
+  credito: boolean
+  debito: boolean
+  dinheiro: boolean
+}
+
 export function Carrinho() {
+  const [isActive, setActive] = useState<Pagamentos>({
+    credito: false,
+    debito: false,
+    dinheiro: false,
+  })
+
+  function toggleClass() {
+    console.log(isActive)
+  }
+
   return (
     <PageContainer>
       <div className="dadosPedido">
@@ -35,18 +52,27 @@ export function Carrinho() {
             </div>
           </div>
           <div className="cardMetodosPagamento">
-            <div>
+            <button
+              onClick={toggleClass}
+              className={isActive ? 'active' : undefined}
+            >
               <CreditCard size={22} className="iconsPagamento" />
               <span>Cartão de Crédito</span>
-            </div>
-            <div>
+            </button>
+            <button
+              onClick={toggleClass}
+              className={isActive ? 'active' : undefined}
+            >
               <Bank size={22} className="iconsPagamento" />
               <span>Cartão de Débito</span>
-            </div>
-            <div>
+            </button>
+            <button
+              onClick={toggleClass}
+              className={isActive ? 'active' : undefined}
+            >
               <Money size={22} className="iconsPagamento" />
               <span>Dinheiro</span>
-            </div>
+            </button>
           </div>
         </div>
       </div>
