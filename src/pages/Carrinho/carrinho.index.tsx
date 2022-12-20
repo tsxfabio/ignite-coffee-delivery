@@ -23,8 +23,37 @@ export function Carrinho() {
     dinheiro: false,
   })
 
-  function toggleClass() {
-    console.log(isActive)
+  function toggleClass(opcao: string) {
+    clearStatusPagamento()
+    switch (opcao) {
+      case 'credito':
+        setActive({
+          ...isActive,
+          credito: true,
+          debito: false,
+          dinheiro: false,
+        })
+        break
+      case 'debito':
+        setActive({
+          ...isActive,
+          credito: false,
+          debito: true,
+          dinheiro: false,
+        })
+        break
+      case 'dinheiro':
+        setActive({
+          ...isActive,
+          credito: false,
+          debito: false,
+          dinheiro: true,
+        })
+    }
+  }
+
+  function clearStatusPagamento() {
+    setActive({ credito: false, debito: false, dinheiro: false })
   }
 
   return (
@@ -53,22 +82,22 @@ export function Carrinho() {
           </div>
           <div className="cardMetodosPagamento">
             <button
-              onClick={toggleClass}
-              className={isActive ? 'active' : undefined}
+              onClick={() => toggleClass('credito')}
+              className={isActive.credito ? 'active' : undefined}
             >
               <CreditCard size={22} className="iconsPagamento" />
               <span>Cartão de Crédito</span>
             </button>
             <button
-              onClick={toggleClass}
-              className={isActive ? 'active' : undefined}
+              onClick={() => toggleClass('debito')}
+              className={isActive.debito ? 'active' : undefined}
             >
               <Bank size={22} className="iconsPagamento" />
               <span>Cartão de Débito</span>
             </button>
             <button
-              onClick={toggleClass}
-              className={isActive ? 'active' : undefined}
+              onClick={() => toggleClass('dinheiro')}
+              className={isActive.dinheiro ? 'active' : undefined}
             >
               <Money size={22} className="iconsPagamento" />
               <span>Dinheiro</span>
