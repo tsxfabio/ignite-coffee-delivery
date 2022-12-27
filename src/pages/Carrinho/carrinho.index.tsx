@@ -6,6 +6,7 @@ import {
   Money,
 } from 'phosphor-react'
 import { useState } from 'react'
+import { CoffeeCardHorizontal } from '../../components/CoffeeCardHorizontal/CoffeeCardHorizontal.index'
 import { Titles } from '../../components/Titles/Titles.index'
 import { PageContainer } from './carrinho.styles'
 import { FormEndereco } from './FormEndereco/FormEndereco.index'
@@ -108,7 +109,10 @@ export function Carrinho() {
       <div className="confirmacaoPedido">
         <Titles title="Cafés selecionados" subtitle={true} />
         <div className="confirmacaoPagamentoContainer">
-          <div></div>
+          <CoffeeCardHorizontal
+            imageLink="https://images.unsplash.com/photo-1572442388796-11668a67e53d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=935&q=80"
+            name="Expresso Tradicional"
+          />
           <div className="resumoValor">
             <div>
               <span>Total de itens</span>
