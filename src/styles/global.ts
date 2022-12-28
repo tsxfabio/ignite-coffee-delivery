@@ -8,6 +8,13 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 body {
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 10rem;
@@ -15,4 +22,5 @@ body {
   font-size: 0.875rem;
   background: ${(props) => props.theme['white-200']};
 }
+
 `

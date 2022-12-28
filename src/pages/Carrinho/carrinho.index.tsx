@@ -112,6 +112,22 @@ export function Carrinho() {
           <CoffeeCardHorizontal
             imageLink="https://images.unsplash.com/photo-1572442388796-11668a67e53d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=935&q=80"
             name="Expresso Tradicional"
+            valor={9.99}
+          />
+          <CoffeeCardHorizontal
+            imageLink="https://images.unsplash.com/photo-1572442388796-11668a67e53d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=935&q=80"
+            name="Expresso Tradicional"
+            valor={9.99}
+          />
+          <CoffeeCardHorizontal
+            imageLink="https://images.unsplash.com/photo-1572442388796-11668a67e53d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=935&q=80"
+            name="Expresso Tradicional"
+            valor={9.99}
+          />
+          <CoffeeCardHorizontal
+            imageLink="https://images.unsplash.com/photo-1572442388796-11668a67e53d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=935&q=80"
+            name="Expresso Tradicional"
+            valor={9.99}
           />
           <div className="resumoValor">
             <div>
