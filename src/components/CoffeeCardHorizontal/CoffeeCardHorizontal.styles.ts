@@ -59,6 +59,8 @@ export const HorizontalCard = styled.div`
         }
 
         input {
+          -moz-appearance: textfield;
+
           width: 2rem;
           height: 100%;
           text-align: center;

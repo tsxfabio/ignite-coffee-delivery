@@ -29,16 +29,53 @@ export const CardContainer = styled.div`
     }
 
     .info-buy {
-      width: 80%;
+      width: 100%;
       display: flex;
       align-items: center;
       justify-content: space-around;
       flex-direction: row;
 
+      margin-bottom: 1.25rem;
+
       span {
       }
-      input {
-        width: 30%;
+      div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0;
+
+        padding: 0.5rem;
+        border: 1px solid transparent;
+        border-radius: 6px;
+
+        background: ${(props) => props.theme['gray-300']};
+        //width: 50%;
+
+        .operatorIcons {
+          margin: 0;
+          padding: 0;
+        }
+
+        input {
+          -webkit-appearance: none;
+          -moz-appearance: textfield;
+
+          font-size: 1rem;
+          text-align: center;
+          background-color: ${(props) => props.theme['gray-300']};
+          border: 1px solid transparent;
+          width: 2.5rem;
+          :focus {
+            outline: none;
+          }
+        }
+      }
+      .cartIcons {
+        background: ${(props) => props.theme['purple-700']};
+        #shoppingCart {
+          color: ${(props) => props.theme['white-100']};
+        }
       }
     }
   }
