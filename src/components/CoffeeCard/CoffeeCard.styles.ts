@@ -7,13 +7,15 @@ export const CardContainer = styled.div`
   margin-bottom: 1rem;
 
   width: 256px;
-  height: 330px;
+  //height: 330px;
 
   .card-elements {
     display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: center;
+    gap: 0;
+
     text-align: center;
     width: 100%;
     height: 100%;
@@ -26,6 +28,20 @@ export const CardContainer = styled.div`
     img {
       border-radius: 50%;
       margin-top: -20px;
+    }
+
+    .tags {
+      margin-top: 0.75rem;
+      padding: 4px 8px;
+
+      font-family: 'Roboto', sans-serif;
+      font-size: 0.625rem;
+      font-weight: 700;
+      text-transform: uppercase;
+
+      border-radius: 100px;
+      color: ${(props) => props.theme['yellow-700']};
+      background: ${(props) => props.theme['yellow-100']};
     }
 
     .info-buy {
