@@ -25,35 +25,77 @@ export const CardContainer = styled.div`
 
     background-color: ${(props) => props.theme['gray-100']};
 
+    //Imagem do café
     img {
       border-radius: 50%;
       margin-top: -20px;
     }
 
+    //Tags - Tipo de café
     .tags {
+      display: flex;
+      gap: 0.2rem;
       margin-top: 0.75rem;
-      padding: 4px 8px;
 
-      font-family: 'Roboto', sans-serif;
-      font-size: 0.625rem;
+      .tags-i {
+        padding: 4px 8px;
+
+        font-family: 'Roboto', sans-serif;
+        font-size: 0.625rem;
+        font-weight: 700;
+        text-transform: uppercase;
+
+        border-radius: 100px;
+        color: ${(props) => props.theme['yellow-700']};
+        background: ${(props) => props.theme['yellow-100']};
+      }
+    }
+
+    //Título - Nome do café
+    h3 {
+      margin-top: 1rem;
+      font-family: 'Baloo 2', cursive;
       font-weight: 700;
-      text-transform: uppercase;
+      font-size: 1.25rem;
+      line-height: 130%;
+    }
 
-      border-radius: 100px;
-      color: ${(props) => props.theme['yellow-700']};
-      background: ${(props) => props.theme['yellow-100']};
+    //Descrição - Descrição do café
+    .description {
+      margin-top: 0.5rem;
+      text-align: center;
+
+      color: ${(props) => props.theme['gray-500']};
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400;
+      font-size: 0.875rem;
+      line-height: 130%;
     }
 
     .info-buy {
-      width: 100%;
       display: flex;
-      align-items: center;
-      justify-content: space-around;
       flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      gap: 0;
+      width: 100%;
 
+      margin-top: 2rem;
       margin-bottom: 1.25rem;
 
       span {
+        color: ${(props) => props.theme['gray-600']};
+        font-family: 'Baloo 2', cursive;
+        font-size: 1.5rem;
+        font-weight: 800;
+        line-height: 130%;
+        text-align: right;
+
+        ::before {
+          content: 'R$';
+          font-family: 'Roboto', sans-serif;
+          font-size: 0.875rem;
+        }
       }
       div {
         display: flex;
@@ -61,7 +103,7 @@ export const CardContainer = styled.div`
         align-items: center;
         gap: 0;
 
-        padding: 0.5rem;
+        padding: 0.53125rem;
         border: 1px solid transparent;
         border-radius: 6px;
 
@@ -71,6 +113,7 @@ export const CardContainer = styled.div`
         .operatorIcons {
           margin: 0;
           padding: 0;
+          color: ${(props) => props.theme['purple-500']};
         }
 
         input {
@@ -81,7 +124,7 @@ export const CardContainer = styled.div`
           text-align: center;
           background-color: ${(props) => props.theme['gray-300']};
           border: 1px solid transparent;
-          width: 2.5rem;
+          width: 1.5rem;
           :focus {
             outline: none;
           }
