@@ -114,6 +114,7 @@ export const CardContainer = styled.div`
           margin: 0;
           padding: 0;
           color: ${(props) => props.theme['purple-500']};
+          cursor: pointer;
         }
 
         input {
