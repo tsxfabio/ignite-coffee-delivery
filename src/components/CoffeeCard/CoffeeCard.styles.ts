@@ -132,6 +132,7 @@ export const CardContainer = styled.div`
         }
       }
       .cartIcons {
+        cursor: pointer;
         background: ${(props) => props.theme['purple-700']};
         #shoppingCart {
           color: ${(props) => props.theme['white-100']};

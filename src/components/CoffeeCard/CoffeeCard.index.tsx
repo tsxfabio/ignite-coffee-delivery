@@ -1,5 +1,6 @@
 import { Minus, Plus, ShoppingCart, Target } from 'phosphor-react'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { OrderCoffeeContext } from '../../contexts/CoffeeContext'
 import { CardContainer } from './CoffeeCard.styles'
 
 export interface CoffeeProviders {
@@ -12,6 +13,7 @@ export interface CoffeeProviders {
 }
 
 export function CoffeeCard(props: CoffeeProviders) {
+  const { addCafe, quantidadeCafe } = useContext(OrderCoffeeContext)
   const [value, setValue] = useState(1)
 
   function setUp() {
@@ -21,9 +23,14 @@ export function CoffeeCard(props: CoffeeProviders) {
   }
 
   function setDown() {
+    console.log(quantidadeCafe)
     if (value > 1) {
       setValue((value) => value - 1)
     }
+  }
+
+  function handleAddCafe() {
+    return console.log(quantidadeCafe)
   }
 
   return (
@@ -65,7 +72,12 @@ export function CoffeeCard(props: CoffeeProviders) {
             />
           </div>
           <div className="cartIcons">
-            <ShoppingCart size={22} weight="fill" id="shoppingCart" />
+            <ShoppingCart
+              size={22}
+              weight="fill"
+              id="shoppingCart"
+              onClick={handleAddCafe}
+            />
           </div>
         </div>
       </div>
