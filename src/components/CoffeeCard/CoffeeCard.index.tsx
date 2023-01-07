@@ -1,5 +1,5 @@
 import { Minus, Plus, ShoppingCart, Target } from 'phosphor-react'
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { OrderCoffeeContext } from '../../contexts/CoffeeContext'
 import { CardContainer } from './CoffeeCard.styles'
 
@@ -14,20 +14,20 @@ export interface CoffeeProviders {
 
 export function CoffeeCard(props: CoffeeProviders) {
   const { itemOrder, handleInputOrderSubmit } = useContext(OrderCoffeeContext)
-  const [value, setValue] = useState(1)
+  const [value, setValue] = useState<number>(1)
+
+  useEffect(() => {
+    console.log(itemOrder)
+  }, [value, itemOrder])
 
   function setUp() {
+    setValue(value)
     if (value < 99) {
       setValue((value) => value + 1)
     }
   }
 
-  function setDown() {
-    if (value > 1) {
-      setValue((state) => state - 1)
-      console.log(value)
-    }
-  }
+  function setDown() {}
 
   function imprime(name: string, quantidade: number, price: number) {
     handleInputOrderSubmit(name, quantidade, price)
@@ -62,8 +62,8 @@ export function CoffeeCard(props: CoffeeProviders) {
               type="number"
               max={99}
               min={1}
-              value={value}
               className="inputQuantidade"
+              value={value}
               onChange={(e) => console.log(e.target.value)}
             />
             <Plus

@@ -5,6 +5,7 @@ interface PropsCard {
   imageLink: string
   name: string
   valor: number
+  quantidade: number
 }
 
 export function CoffeeCardHorizontal(props: PropsCard) {
@@ -19,7 +20,7 @@ export function CoffeeCardHorizontal(props: PropsCard) {
           <div>
             <div className="inputContainer">
               <Minus size={16} className="operatorIcons" />
-              <input type="number" defaultValue="1" />
+              <input type="number" value={props.quantidade} />
               <Plus size={16} className="operatorIcons" />
             </div>
             <button>

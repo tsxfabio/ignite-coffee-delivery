@@ -5,9 +5,10 @@ import {
   MapPinLine,
   Money,
 } from 'phosphor-react'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { CoffeeCardHorizontal } from '../../components/CoffeeCardHorizontal/CoffeeCardHorizontal.index'
 import { Titles } from '../../components/Titles/Titles.index'
+import { OrderCoffeeContext } from '../../contexts/CoffeeContext'
 import { PageContainer } from './carrinho.styles'
 import { FormEndereco } from './FormEndereco/FormEndereco.index'
 
@@ -18,6 +19,7 @@ interface Pagamentos {
 }
 
 export function Carrinho() {
+  const { itemOrder } = useContext(OrderCoffeeContext)
   const [isActive, setActive] = useState<Pagamentos>({
     credito: false,
     debito: false,
@@ -109,26 +111,16 @@ export function Carrinho() {
       <div className="confirmacaoPedido">
         <Titles title="Cafés selecionados" subtitle={true} />
         <div className="confirmacaoPagamentoContainer">
-          <CoffeeCardHorizontal
-            imageLink="https://images.unsplash.com/photo-1572442388796-11668a67e53d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=935&q=80"
-            name="Expresso Tradicional"
-            valor={9.99}
-          />
-          <CoffeeCardHorizontal
-            imageLink="https://images.unsplash.com/photo-1572442388796-11668a67e53d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=935&q=80"
-            name="Expresso Tradicional"
-            valor={9.99}
-          />
-          <CoffeeCardHorizontal
-            imageLink="https://images.unsplash.com/photo-1572442388796-11668a67e53d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=935&q=80"
-            name="Expresso Tradicional"
-            valor={9.99}
-          />
-          <CoffeeCardHorizontal
-            imageLink="https://images.unsplash.com/photo-1572442388796-11668a67e53d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=935&q=80"
-            name="Expresso Tradicional"
-            valor={9.99}
-          />
+          {itemOrder.map((item) => {
+            return (
+              <CoffeeCardHorizontal
+                imageLink=""
+                name={item.name}
+                valor={item.price}
+                quantidade={item.quantidade}
+              />
+            )
+          })}
           <div className="resumoValor">
             <div>
               <span>Total de itens</span>
