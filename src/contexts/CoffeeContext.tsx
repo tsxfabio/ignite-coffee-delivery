@@ -1,8 +1,18 @@
 import { createContext, ReactNode, useState } from 'react'
 
-interface orderCoffeeType {
-  itemOrder: number
-  setItemOrder: (itemOrder: number) => void
+export interface orderCoffeeType {
+  itemOrder: itemOrderType[]
+  handleInputOrderSubmit: (
+    name: string,
+    quantidade: number,
+    price: number
+  ) => void
+}
+
+export interface itemOrderType {
+  name: string
+  quantidade: number
+  price: number
 }
 
 export const OrderCoffeeContext = createContext({} as orderCoffeeType)
@@ -14,10 +24,18 @@ interface CoffeeContextProviderProps {
 export function CoffeeContextProvider({
   children,
 }: CoffeeContextProviderProps) {
-  const [itemOrder, setItemOrder] = useState(33)
+  const [itemOrder, setItemOrder] = useState<itemOrderType[]>([])
+
+  function handleInputOrderSubmit(
+    name: string,
+    quantidade: number,
+    price: number
+  ) {
+    setItemOrder((state) => [...state, { name, quantidade, price }])
+  }
 
   return (
-    <OrderCoffeeContext.Provider value={{ itemOrder, setItemOrder }}>
+    <OrderCoffeeContext.Provider value={{ itemOrder, handleInputOrderSubmit }}>
       {children}
     </OrderCoffeeContext.Provider>
   )
