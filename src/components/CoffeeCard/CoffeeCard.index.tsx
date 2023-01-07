@@ -13,7 +13,7 @@ export interface CoffeeProviders {
 }
 
 export function CoffeeCard(props: CoffeeProviders) {
-  const { addCafe, quantidadeCafe } = useContext(OrderCoffeeContext)
+  const { itemOrder, setItemOrder } = useContext(OrderCoffeeContext)
   const [value, setValue] = useState(1)
 
   function setUp() {
@@ -23,14 +23,14 @@ export function CoffeeCard(props: CoffeeProviders) {
   }
 
   function setDown() {
-    console.log(quantidadeCafe)
     if (value > 1) {
       setValue((value) => value - 1)
     }
   }
 
-  function handleAddCafe() {
-    return console.log(quantidadeCafe)
+  function imprime(value: number) {
+    setItemOrder(value)
+    console.log(itemOrder)
   }
 
   return (
@@ -76,7 +76,7 @@ export function CoffeeCard(props: CoffeeProviders) {
               size={22}
               weight="fill"
               id="shoppingCart"
-              onClick={handleAddCafe}
+              onClick={() => imprime(value)}
             />
           </div>
         </div>
