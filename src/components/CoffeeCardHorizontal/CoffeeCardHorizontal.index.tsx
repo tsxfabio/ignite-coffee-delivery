@@ -2,7 +2,7 @@ import { Minus, Plus, Trash } from 'phosphor-react'
 import { HorizontalCard } from './CoffeeCardHorizontal.styles'
 
 interface PropsCard {
-  imageLink: string
+  img: string
   name: string
   valor: number
   quantidade: number
@@ -13,7 +13,7 @@ export function CoffeeCardHorizontal(props: PropsCard) {
     <div>
       <HorizontalCard>
         <div className="imageContainer">
-          <img src={props.imageLink} />
+          <img src={props.img} />
         </div>
         <div className="quantidadeContainer">
           <span>{props.name}</span>

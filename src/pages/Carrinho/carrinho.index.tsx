@@ -19,7 +19,7 @@ interface Pagamentos {
 }
 
 export function Carrinho() {
-  const { itemOrder } = useContext(OrderCoffeeContext)
+  const { itemOrder, orderPrice } = useContext(OrderCoffeeContext)
   const [isActive, setActive] = useState<Pagamentos>({
     credito: false,
     debito: false,
@@ -114,7 +114,7 @@ export function Carrinho() {
           {itemOrder.map((item) => {
             return (
               <CoffeeCardHorizontal
-                imageLink=""
+                img={item.imagem}
                 name={item.name}
                 valor={item.price}
                 quantidade={item.quantidade}
@@ -124,15 +124,15 @@ export function Carrinho() {
           <div className="resumoValor">
             <div>
               <span>Total de itens</span>
-              <span>R$ 29,70</span>
+              <span>R$ {orderPrice.itensPrice}</span>
             </div>
             <div>
-              <span>Entrega</span>
-              <span>R$ 3,50</span>
+              <span>Frete</span>
+              <span>R$ {orderPrice.fretePrice}</span>
             </div>
             <div>
               <span>Total</span>
-              <span>R$ 33,20</span>
+              <span>R$ {orderPrice.itensPrice + orderPrice.fretePrice}</span>
             </div>
             <button type="submit">Confirmar Pedido</button>
           </div>

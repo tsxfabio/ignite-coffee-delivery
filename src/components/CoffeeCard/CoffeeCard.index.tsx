@@ -29,8 +29,13 @@ export function CoffeeCard(props: CoffeeProviders) {
 
   function setDown() {}
 
-  function imprime(name: string, quantidade: number, price: number) {
-    handleInputOrderSubmit(name, quantidade, price)
+  function addInCart(
+    imagem: string,
+    name: string,
+    quantidade: number,
+    price: number
+  ) {
+    handleInputOrderSubmit(imagem, name, quantidade, price)
     console.log(itemOrder)
   }
 
@@ -78,7 +83,9 @@ export function CoffeeCard(props: CoffeeProviders) {
               size={22}
               weight="fill"
               id="shoppingCart"
-              onClick={() => imprime(props.name, value, props.price)}
+              onClick={() =>
+                addInCart(props.img, props.name, value, props.price)
+              }
             />
           </div>
         </div>
