@@ -128,11 +128,15 @@ export function Carrinho() {
             </div>
             <div>
               <span>Frete</span>
-              <span>R$ {orderPrice.fretePrice}</span>
+              <span>{orderPrice.fretePrice}</span>
             </div>
             <div>
               <span>Total</span>
-              <span>R$ {orderPrice.itensPrice + orderPrice.fretePrice}</span>
+              <span>
+                {orderPrice.fretePrice === 'Grátis'
+                  ? orderPrice.itensPrice
+                  : orderPrice.itensPrice + orderPrice.fretePrice}
+              </span>
             </div>
             <button type="submit">Confirmar Pedido</button>
           </div>

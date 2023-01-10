@@ -19,7 +19,7 @@ export interface CoffeesType {
 
 export interface orderPriceType {
   itensPrice: number
-  fretePrice: number
+  fretePrice: number | 'Grátis'
 }
 
 export interface orderCoffeeType {
@@ -176,6 +176,7 @@ export function CoffeeContextProvider({
       setOrderPrice((state) => ({
         ...state,
         itensPrice: state.itensPrice + item.price * item.quantidade,
+        fretePrice: state.itensPrice < 50 ? 15.99 : 'Grátis',
       }))
     })
   }, [itemOrder])
