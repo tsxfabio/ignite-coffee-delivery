@@ -1,8 +1,8 @@
 # Coffee Delivery
 
-Desafio do segundo módulo do curso de ReactJS da Rocketseat.
+Desafio do segundo módulo do curso de ReactJS da Rocketseat.  
 A proposta era a criação do e-commerce de uma cafeteria, seguindo à risca o layout apresentado pela equipe de design.
-![capa](/public/capa-readme.jpeg)
+![capa](public/capa-readme.jpeg)
 
 ### Progresso
 
