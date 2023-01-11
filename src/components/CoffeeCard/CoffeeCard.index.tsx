@@ -17,17 +17,36 @@ export function CoffeeCard(props: CoffeeProviders) {
   const [value, setValue] = useState<number>(1)
 
   useEffect(() => {
-    console.log(itemOrder)
+    verifyValueChange()
   }, [value, itemOrder])
 
   function setUp() {
     setValue(value)
-    if (value < 99) {
+    if (value < 20) {
       setValue((value) => value + 1)
     }
   }
 
-  function setDown() {}
+  function setDown() {
+    setValue(value)
+    if (value > 1) {
+      setValue((value) => value - 1)
+    }
+  }
+
+  function handleChangeInput(value: number) {
+    console.log(value)
+    setValue(value)
+  }
+
+  function verifyValueChange() {
+    if (value < 1) {
+      setValue(1)
+    }
+    if (value > 20) {
+      setValue(20)
+    }
+  }
 
   function addInCart(
     imagem: string,
@@ -36,7 +55,6 @@ export function CoffeeCard(props: CoffeeProviders) {
     price: number
   ) {
     handleInputOrderSubmit(imagem, name, quantidade, price)
-    console.log(itemOrder)
   }
 
   return (
@@ -65,11 +83,11 @@ export function CoffeeCard(props: CoffeeProviders) {
             />
             <input
               type="number"
-              max={99}
+              max={20}
               min={1}
               className="inputQuantidade"
               value={value}
-              onChange={(e) => console.log(e.target.value)}
+              onChange={(e) => handleChangeInput(Number(e.target.value))}
             />
             <Plus
               size={12}

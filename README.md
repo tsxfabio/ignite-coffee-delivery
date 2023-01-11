@@ -2,7 +2,7 @@
 
 Desafio do segundo módulo do curso de ReactJS da Rocketseat
 
-### To-do
+### Progresso
 
 - Componentes:
 
@@ -11,3 +11,7 @@ Desafio do segundo módulo do curso de ReactJS da Rocketseat
 
 - [x] Criação do Navbar
 - [x] Criação da Página de Home
+
+### To-do
+
+- [ ] Atualização da função para cálculo de frete.
