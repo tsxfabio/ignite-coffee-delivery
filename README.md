@@ -1,7 +1,8 @@
 # Coffee Delivery
 
 Desafio do segundo módulo do curso de ReactJS da Rocketseat.  
-A proposta era a criação do e-commerce de uma cafeteria, seguindo à risca o layout apresentado pela equipe de design.  
+A proposta era a criação do front-end do e-commerce de uma cafeteria, seguindo à risca o layout apresentado pela equipe de design.
+
 ![capa](https://github.com/tsxfabio/ignite-coffee-delivery/blob/main/public/capa-readme.jpg)
 
 ### Progresso
