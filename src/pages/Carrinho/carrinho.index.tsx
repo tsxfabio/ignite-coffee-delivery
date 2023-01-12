@@ -19,7 +19,7 @@ interface Pagamentos {
 }
 
 export function Carrinho() {
-  const { itemOrder, orderPrice } = useContext(OrderCoffeeContext)
+  const { itemOrder, totalPrice } = useContext(OrderCoffeeContext)
   const [isActive, setActive] = useState<Pagamentos>({
     credito: false,
     debito: false,
@@ -125,7 +125,7 @@ export function Carrinho() {
             <div>
               <span>Total de itens</span>
               <span>
-                {orderPrice.itensPrice.toLocaleString('pt-br', {
+                {totalPrice.toLocaleString('pt-br', {
                   style: 'currency',
                   currency: 'BRL',
                 })}
@@ -134,19 +134,19 @@ export function Carrinho() {
             <div>
               <span>Frete</span>
               <span>
-                {orderPrice.fretePrice.toLocaleString('pt-br', {
+                {/* {orderPrice.fretePrice.toLocaleString('pt-br', {
                   style: 'currency',
                   currency: 'BRL',
-                })}
+                })} */}
               </span>
             </div>
             <div>
               <span>Total</span>
               <span>
-                {orderPrice.totalPrice.toLocaleString('pt-br', {
+                {/* {orderPrice.totalPrice.toLocaleString('pt-br', {
                   style: 'currency',
                   currency: 'BRL',
-                })}
+                })} */}
               </span>
             </div>
             <button type="submit">Confirmar Pedido</button>

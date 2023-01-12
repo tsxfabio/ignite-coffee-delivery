@@ -26,8 +26,7 @@ export interface orderPriceType {
 export interface orderCoffeeType {
   coffees: CoffeesType[]
   itemOrder: itemOrderType[]
-  orderPrice: orderPriceType
-  setOrderPrice: (orderPrice: orderPriceType) => void
+  totalPrice: number
   handleInputOrderSubmit: (
     imagem: string,
     name: string,
@@ -166,20 +165,8 @@ export function CoffeeContextProvider({
     },
   ])
   const [itemOrder, setItemOrder] = useState<itemOrderType[]>([])
-  const [orderPrice, setOrderPrice] = useState<orderPriceType>({
-    itensPrice: 0,
-    fretePrice: 0,
-    totalPrice: 0,
-  })
-
-  useEffect(() => {
-    cleanOrderPrice()
-    calcOrderPrice()
-  }, [itemOrder])
-
-  useEffect(() => {
-    calcFretePrice()
-  }, [orderPrice.itensPrice])
+  const [totalPrice, setTotalPrice] = useState(0)
+  const [fretePrice, setFretePrice] = useState<number | 'Grátis'>(0)
 
   function handleInputOrderSubmit(
     imagem: string,
@@ -190,44 +177,34 @@ export function CoffeeContextProvider({
     setItemOrder((state) => [...state, { imagem, name, quantidade, price }])
   }
 
-  function cleanOrderPrice() {
-    setOrderPrice({
-      itensPrice: 0,
-      fretePrice: 0,
-      totalPrice: 0,
-    })
-  }
-
-  function calcOrderPrice() {
+  useEffect(() => {
     itemOrder.map((item) => {
-      setOrderPrice((state) => ({
-        itensPrice: state.itensPrice + item.price * item.quantidade,
-        fretePrice: state.itensPrice < 50 ? 15.99 : 0,
-        totalPrice: state.itensPrice + state.fretePrice,
-      }))
+      setTotalPrice((state) => state + item.price * item.quantidade)
     })
-  }
+    return function cleanup() {
+      setTotalPrice(0)
+    }
+  }, [itemOrder])
 
-  //Ajustar valor do frete
-  function calcFretePrice() {
-    setOrderPrice((state) => {
-      return {
-        ...state,
-        fretePrice:
-          state.itensPrice === 0 ? 0 : state.itensPrice < 50 ? 15.99 : 0,
-        totalPrice: state.itensPrice + state.fretePrice,
-      }
-    })
+  function freteCalc() {
+    if (totalPrice === 0) {
+      setFretePrice(0)
+    }
+    if (totalPrice > 0 && totalPrice < 50) {
+      setFretePrice(10)
+    }
+    if (totalPrice >= 50) {
+      setFretePrice('Grátis')
+    }
   }
 
   return (
     <OrderCoffeeContext.Provider
       value={{
+        totalPrice,
         coffees,
         itemOrder,
         handleInputOrderSubmit,
-        orderPrice,
-        setOrderPrice,
       }}
     >
       {children}

@@ -55,6 +55,7 @@ export function CoffeeCard(props: CoffeeProviders) {
     price: number
   ) {
     handleInputOrderSubmit(imagem, name, quantidade, price)
+    setValue(1)
   }
 
   return (

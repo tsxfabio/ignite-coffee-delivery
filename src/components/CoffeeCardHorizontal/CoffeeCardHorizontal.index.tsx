@@ -29,7 +29,12 @@ export function CoffeeCardHorizontal(props: PropsCard) {
             </button>
           </div>
         </div>
-        <div>R$ {props.valor}</div>
+        <div>
+          {props.valor.toLocaleString('pt-br', {
+            style: 'currency',
+            currency: 'BRL',
+          })}
+        </div>
       </HorizontalCard>
     </div>
   )
