@@ -7,13 +7,17 @@ A proposta era a criação do front-end do e-commerce de uma cafeteria, seguindo
 
 ### Progresso
 
-- Componentes:
+Componentes:
 
-  - [x] Vertical Card Coffee
-  - [x] Horizontal Card Coffee
+- [x] Titulo e Subtitulo
+- [x] Navbar
+- [x] Vertical Card Coffee
+- [x] Horizontal Card Coffee
 
-- [x] Criação do Navbar
-- [x] Criação da Página de Home
+Páginas:
+
+- [x] Home
+- [x] Carrinho
 
 ### To-do
 
