@@ -4,6 +4,7 @@ export const HorizontalCard = styled.div`
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  justify-content: space-between;
   gap: 1.25rem;
 
   width: 100%;
