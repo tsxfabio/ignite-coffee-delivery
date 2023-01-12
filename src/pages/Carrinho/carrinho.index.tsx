@@ -124,18 +124,29 @@ export function Carrinho() {
           <div className="resumoValor">
             <div>
               <span>Total de itens</span>
-              <span>R$ {orderPrice.itensPrice}</span>
+              <span>
+                {orderPrice.itensPrice.toLocaleString('pt-br', {
+                  style: 'currency',
+                  currency: 'BRL',
+                })}
+              </span>
             </div>
             <div>
               <span>Frete</span>
-              <span>{orderPrice.fretePrice}</span>
+              <span>
+                {orderPrice.fretePrice.toLocaleString('pt-br', {
+                  style: 'currency',
+                  currency: 'BRL',
+                })}
+              </span>
             </div>
             <div>
               <span>Total</span>
               <span>
-                {orderPrice.fretePrice === 'Grátis'
-                  ? orderPrice.itensPrice
-                  : orderPrice.itensPrice + orderPrice.fretePrice}
+                {orderPrice.totalPrice.toLocaleString('pt-br', {
+                  style: 'currency',
+                  currency: 'BRL',
+                })}
               </span>
             </div>
             <button type="submit">Confirmar Pedido</button>

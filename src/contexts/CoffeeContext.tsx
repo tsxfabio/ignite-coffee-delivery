@@ -19,7 +19,8 @@ export interface CoffeesType {
 
 export interface orderPriceType {
   itensPrice: number
-  fretePrice: number | 'Grátis'
+  fretePrice: number
+  totalPrice: number
 }
 
 export interface orderCoffeeType {
@@ -168,18 +169,17 @@ export function CoffeeContextProvider({
   const [orderPrice, setOrderPrice] = useState<orderPriceType>({
     itensPrice: 0,
     fretePrice: 0,
+    totalPrice: 0,
   })
 
   useEffect(() => {
     cleanOrderPrice()
-    itemOrder.map((item) => {
-      setOrderPrice((state) => ({
-        ...state,
-        itensPrice: state.itensPrice + item.price * item.quantidade,
-        fretePrice: state.itensPrice < 50 ? 15.99 : 'Grátis',
-      }))
-    })
+    calcOrderPrice()
   }, [itemOrder])
+
+  useEffect(() => {
+    calcFretePrice()
+  }, [orderPrice.itensPrice])
 
   function handleInputOrderSubmit(
     imagem: string,
@@ -194,6 +194,29 @@ export function CoffeeContextProvider({
     setOrderPrice({
       itensPrice: 0,
       fretePrice: 0,
+      totalPrice: 0,
+    })
+  }
+
+  function calcOrderPrice() {
+    itemOrder.map((item) => {
+      setOrderPrice((state) => ({
+        itensPrice: state.itensPrice + item.price * item.quantidade,
+        fretePrice: state.itensPrice < 50 ? 15.99 : 0,
+        totalPrice: state.itensPrice + state.fretePrice,
+      }))
+    })
+  }
+
+  //Ajustar valor do frete
+  function calcFretePrice() {
+    setOrderPrice((state) => {
+      return {
+        ...state,
+        fretePrice:
+          state.itensPrice === 0 ? 0 : state.itensPrice < 50 ? 15.99 : 0,
+        totalPrice: state.itensPrice + state.fretePrice,
+      }
     })
   }
 
