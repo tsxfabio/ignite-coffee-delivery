@@ -27,6 +27,8 @@ export interface orderCoffeeType {
   coffees: CoffeesType[]
   itemOrder: itemOrderType[]
   totalPrice: number
+  fretePrice: number | 'Grátis'
+  totalOrderPrice: number
   handleInputOrderSubmit: (
     imagem: string,
     name: string,
@@ -167,6 +169,7 @@ export function CoffeeContextProvider({
   const [itemOrder, setItemOrder] = useState<itemOrderType[]>([])
   const [totalPrice, setTotalPrice] = useState(0)
   const [fretePrice, setFretePrice] = useState<number | 'Grátis'>(0)
+  const [totalOrderPrice, setTotalOrderPrice] = useState(0)
 
   function handleInputOrderSubmit(
     imagem: string,
@@ -186,6 +189,14 @@ export function CoffeeContextProvider({
     }
   }, [itemOrder])
 
+  useEffect(() => {
+    freteCalc()
+  }, [totalPrice])
+
+  useEffect(() => {
+    totalCalc()
+  }, [fretePrice, totalPrice])
+
   function freteCalc() {
     if (totalPrice === 0) {
       setFretePrice(0)
@@ -198,9 +209,19 @@ export function CoffeeContextProvider({
     }
   }
 
+  function totalCalc() {
+    if (fretePrice === 'Grátis') {
+      setTotalOrderPrice(totalPrice)
+    } else {
+      setTotalOrderPrice(totalPrice + fretePrice)
+    }
+  }
+
   return (
     <OrderCoffeeContext.Provider
       value={{
+        totalOrderPrice,
+        fretePrice,
         totalPrice,
         coffees,
         itemOrder,
