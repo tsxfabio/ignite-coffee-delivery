@@ -19,17 +19,18 @@ Páginas:
 - [x] Home
 - [x] Carrinho
 
-Features:
+Features/Características:
 
 - [x] Apresenta uma lista de cafés onde o usuário pode adicionar de 1 a 20 unidades no carrinho.
 - [x] No carrinho o usuário pode alterar a quantidade de cafés.
 - [x] No carrinho o usuário pode remover os cafés.
 - [x] O frete é calculado de acordo com a quantidade de itens e para compras acima de R$ 50,00 o frete é grátis.
+- [x] Caso o usuário já tenha add um tipo de café, ele só poderá alterar a quantidade ou remover o item ná pagina '/carrinho'
 
 ### To-do
 
-- [ ] Atualização da função para cálculo de frete.
-- [ ] Modal de confirmação de item adicionado no carrinho.
+- [x] Atualização da função para cálculo de frete.
+- [ ] Modal de sucesso/falha de item adicionado ao carrinho. (atualmente um alert básico do js)
 - [ ] Ícone com a quantidade de unidades adicionadas no carrinho.
 - [ ] Ajustar a responsividade.
 - [ ] Ajustar a animação do botão ao clicar para adicionar itens ao carrinho, aumentar ou diminuir a quantidade de itens.

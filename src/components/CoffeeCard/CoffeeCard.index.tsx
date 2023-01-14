@@ -54,8 +54,17 @@ export function CoffeeCard(props: CoffeeProviders) {
     quantidade: number,
     price: number
   ) {
-    handleInputOrderSubmit(imagem, name, quantidade, price)
-    setValue(1)
+    const itemFind = itemOrder.find((item) => item.name === name)
+    if (itemFind) {
+      alert(
+        'O item já foi adicionado ao carrinho. Acesse o carrinho para alterar a quantidade.'
+      )
+      setValue(1)
+    } else {
+      handleInputOrderSubmit(imagem, name, quantidade, price)
+      alert('Item adicionado ao carrinho')
+      setValue(1)
+    }
   }
 
   return (
