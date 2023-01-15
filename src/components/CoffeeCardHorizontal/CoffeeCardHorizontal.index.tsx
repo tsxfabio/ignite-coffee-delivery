@@ -20,7 +20,11 @@ export function CoffeeCardHorizontal(props: PropsCard) {
           <div>
             <div className="inputContainer">
               <Minus size={16} className="operatorIcons" />
-              <input type="number" value={props.quantidade} />
+              <input
+                type="number"
+                value={props.quantidade}
+                onChange={() => console.log('change')}
+              />
               <Plus size={16} className="operatorIcons" />
             </div>
             <button>

@@ -115,6 +115,7 @@ export function Carrinho() {
           {itemOrder.map((item) => {
             return (
               <CoffeeCardHorizontal
+                key={item.name}
                 img={item.imagem}
                 name={item.name}
                 valor={item.price}
