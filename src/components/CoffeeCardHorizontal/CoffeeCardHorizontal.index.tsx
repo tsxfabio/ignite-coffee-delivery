@@ -24,7 +24,6 @@ export function CoffeeCardHorizontal(props: PropsCard) {
         item.name === name ? updatedObject : item
       )
       setItemOrder(updatedObjects)
-      console.log(updatedObjects)
     } else {
       alert('Caso queira remover o item, clique no botão "Remover')
     }
@@ -41,7 +40,6 @@ export function CoffeeCardHorizontal(props: PropsCard) {
         item.name === name ? updatedObject : item
       )
       setItemOrder(updatedObjects)
-      console.log(updatedObjects)
     } else {
       alert('Não é possível adicionar mais de 20 itens')
     }
@@ -65,7 +63,7 @@ export function CoffeeCardHorizontal(props: PropsCard) {
               <input
                 type="number"
                 value={props.quantidade}
-                onChange={() => console.log('change')}
+                onChange={() => {}}
               />
               <Plus
                 size={16}
