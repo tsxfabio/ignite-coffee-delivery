@@ -45,6 +45,14 @@ export function CoffeeCardHorizontal(props: PropsCard) {
     }
   }
 
+  function removeCoffee(name: string) {
+    const itemFind = itemOrder.find((item) => item.name === name)
+    if (itemFind) {
+      const updatedObjects = itemOrder.filter((item) => item.name !== name)
+      setItemOrder(updatedObjects)
+    }
+  }
+
   return (
     <div>
       <HorizontalCard>
@@ -71,7 +79,7 @@ export function CoffeeCardHorizontal(props: PropsCard) {
                 onClick={() => setUp(props.name)}
               />
             </div>
-            <button>
+            <button onClick={() => removeCoffee(props.name)}>
               <Trash size={16} className="trashIcon" />
               Remover
             </button>

@@ -83,7 +83,12 @@ export function CoffeeCard(props: CoffeeProviders) {
         <h3>{props.name}</h3>
         <span className="description">{props.description}</span>
         <div className="info-buy">
-          <span>{props.price}</span>
+          <span>{props.price.toLocaleString('pt-br', {
+            style: 'decimal',
+            currency: 'BRL',
+            minimumFractionDigits: 2,
+            
+          })}</span>
           <div>
             <Minus
               size={12}

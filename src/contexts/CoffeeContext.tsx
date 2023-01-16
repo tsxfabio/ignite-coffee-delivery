@@ -55,7 +55,7 @@ export function CoffeeContextProvider({
       name: 'Expresso Tradicional',
       tags: ['Tradicional'],
       description: 'O tradicional café feito com água quente e grãos moídos',
-      price: 9.99,
+      price: 2.50,
     },
     {
       id: 2,
@@ -63,7 +63,7 @@ export function CoffeeContextProvider({
       name: 'Expresso Americano',
       tags: ['Tradicional'],
       description: 'Expresso diluído, menos intenso que o tradicional',
-      price: 9.99,
+      price: 2.50,
     },
     {
       id: 3,
@@ -71,7 +71,7 @@ export function CoffeeContextProvider({
       name: 'Expresso Cremoso',
       tags: ['Tradicional'],
       description: 'Café expresso tradicional com espuma cremosa',
-      price: 9.99,
+      price: 2.50,
     },
     {
       id: 4,
@@ -79,7 +79,7 @@ export function CoffeeContextProvider({
       name: 'Expresso Gelado',
       tags: ['Tradicional', 'Gelado'],
       description: 'Bebida preparada com café expresso e cubos de gelo',
-      price: 9.99,
+      price: 2.50,
     },
     {
       id: 5,
@@ -87,7 +87,7 @@ export function CoffeeContextProvider({
       name: 'Café com Leite',
       tags: ['Tradicional', 'Com Leite'],
       description: 'Meio a meio de expresso tradicional com leite vaporizado',
-      price: 9.99,
+      price: 3.50,
     },
     {
       id: 6,
@@ -96,7 +96,7 @@ export function CoffeeContextProvider({
       tags: ['Tradicional', 'Com Leite'],
       description:
         'Uma dose de café expresso com o dobro de leite e espuma cremosa',
-      price: 9.99,
+      price: 3.50,
     },
     {
       id: 7,
@@ -105,7 +105,7 @@ export function CoffeeContextProvider({
       tags: ['Tradicional', 'Com Leite'],
       description:
         'Bebida com canela feita de doses iguais de café, leite e espuma',
-      price: 9.99,
+      price: 3.50,
     },
     {
       id: 8,
@@ -114,7 +114,7 @@ export function CoffeeContextProvider({
       tags: ['Tradicional', 'Com Leite'],
       description:
         'Café expresso misturado com um pouco de leite quente e espuma',
-      price: 9.99,
+      price: 3.50,
     },
     {
       id: 9,
@@ -122,7 +122,7 @@ export function CoffeeContextProvider({
       name: 'Mochaccino',
       tags: ['Tradicional', 'Com Leite'],
       description: 'Café expresso com calda de chocolate, pouco leite e espuma',
-      price: 9.99,
+      price: 3.50,
     },
     {
       id: 10,
@@ -131,7 +131,7 @@ export function CoffeeContextProvider({
       tags: ['Especial', 'Com Leite'],
       description:
         'Bebida feita com chocolate dissolvido no leite quente e café',
-      price: 9.99,
+      price: 3.50,
     },
     {
       id: 11,
@@ -140,7 +140,7 @@ export function CoffeeContextProvider({
       tags: ['Especial', 'Alcoólico', 'Gelado'],
       description:
         'Drink gelado de café expresso com rum, creme de leite e hortelã',
-      price: 9.99,
+      price: 3.90,
     },
     {
       id: 12,
@@ -148,7 +148,7 @@ export function CoffeeContextProvider({
       name: 'Havaiano',
       tags: ['Especial'],
       description: 'Bebida adocicada preparada com café e leite de coco',
-      price: 9.99,
+      price: 3.90,
     },
     {
       id: 13,
@@ -156,7 +156,7 @@ export function CoffeeContextProvider({
       name: 'Árabe',
       tags: ['Especial'],
       description: 'Bebida preparada com grãos de café árabe e especiarias',
-      price: 9.99,
+      price: 3.90,
     },
     {
       id: 14,
@@ -164,7 +164,7 @@ export function CoffeeContextProvider({
       name: 'Irlandês',
       tags: ['Especial', 'Alcoólico'],
       description: 'Bebida a base de café, uísque irlandês, açúcar e chantilly',
-      price: 9.99,
+      price: 3.90,
     },
   ])
   const [itemOrder, setItemOrder] = useState<itemOrderType[]>([])

@@ -29,7 +29,9 @@ Features/Características:
 
 ### To-do
 
-- [x] Atualização da função para cálculo de frete.
+- [x] Função: cálculo de frete.
+- [x] Função: Aumentar/Diminuir quantidade de itens adicionados no carrinho.
+- [ ] Função: Remover os itens adicionados no carrinho.
 - [ ] Modal de sucesso/falha de item adicionado ao carrinho. (atualmente um alert básico do js)
 - [ ] Ícone com a quantidade de unidades adicionadas no carrinho.
 - [ ] Ajustar a responsividade.
