@@ -8,6 +8,10 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 body {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+	user-select: none;
 
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {

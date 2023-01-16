@@ -29,6 +29,7 @@ export interface orderCoffeeType {
   totalPrice: number
   fretePrice: number | 'Grátis'
   totalOrderPrice: number
+  setItemOrder: (item: itemOrderType[]) => void
   handleInputOrderSubmit: (
     imagem: string,
     name: string,
@@ -220,6 +221,7 @@ export function CoffeeContextProvider({
   return (
     <OrderCoffeeContext.Provider
       value={{
+        setItemOrder,
         totalOrderPrice,
         fretePrice,
         totalPrice,
