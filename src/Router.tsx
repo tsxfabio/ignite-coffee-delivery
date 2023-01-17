@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom'
-import { Header } from './components/Header'
+import { Header } from './components/Header/Header.index'
 import { DefaultLayout } from './layouts/DefaultLayout'
 import { Carrinho } from './pages/Carrinho/carrinho.index'
 import { Home } from './pages/Home'

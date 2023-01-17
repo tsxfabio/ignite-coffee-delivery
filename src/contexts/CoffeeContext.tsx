@@ -29,6 +29,7 @@ export interface orderCoffeeType {
   totalPrice: number
   fretePrice: number | 'Grátis'
   totalOrderPrice: number
+  quantidadeTotal: number
   setItemOrder: (item: itemOrderType[]) => void
   handleInputOrderSubmit: (
     imagem: string,
@@ -55,7 +56,7 @@ export function CoffeeContextProvider({
       name: 'Expresso Tradicional',
       tags: ['Tradicional'],
       description: 'O tradicional café feito com água quente e grãos moídos',
-      price: 2.50,
+      price: 2.5,
     },
     {
       id: 2,
@@ -63,7 +64,7 @@ export function CoffeeContextProvider({
       name: 'Expresso Americano',
       tags: ['Tradicional'],
       description: 'Expresso diluído, menos intenso que o tradicional',
-      price: 2.50,
+      price: 2.5,
     },
     {
       id: 3,
@@ -71,7 +72,7 @@ export function CoffeeContextProvider({
       name: 'Expresso Cremoso',
       tags: ['Tradicional'],
       description: 'Café expresso tradicional com espuma cremosa',
-      price: 2.50,
+      price: 2.5,
     },
     {
       id: 4,
@@ -79,7 +80,7 @@ export function CoffeeContextProvider({
       name: 'Expresso Gelado',
       tags: ['Tradicional', 'Gelado'],
       description: 'Bebida preparada com café expresso e cubos de gelo',
-      price: 2.50,
+      price: 2.5,
     },
     {
       id: 5,
@@ -87,7 +88,7 @@ export function CoffeeContextProvider({
       name: 'Café com Leite',
       tags: ['Tradicional', 'Com Leite'],
       description: 'Meio a meio de expresso tradicional com leite vaporizado',
-      price: 3.50,
+      price: 3.5,
     },
     {
       id: 6,
@@ -96,7 +97,7 @@ export function CoffeeContextProvider({
       tags: ['Tradicional', 'Com Leite'],
       description:
         'Uma dose de café expresso com o dobro de leite e espuma cremosa',
-      price: 3.50,
+      price: 3.5,
     },
     {
       id: 7,
@@ -105,7 +106,7 @@ export function CoffeeContextProvider({
       tags: ['Tradicional', 'Com Leite'],
       description:
         'Bebida com canela feita de doses iguais de café, leite e espuma',
-      price: 3.50,
+      price: 3.5,
     },
     {
       id: 8,
@@ -114,7 +115,7 @@ export function CoffeeContextProvider({
       tags: ['Tradicional', 'Com Leite'],
       description:
         'Café expresso misturado com um pouco de leite quente e espuma',
-      price: 3.50,
+      price: 3.5,
     },
     {
       id: 9,
@@ -122,7 +123,7 @@ export function CoffeeContextProvider({
       name: 'Mochaccino',
       tags: ['Tradicional', 'Com Leite'],
       description: 'Café expresso com calda de chocolate, pouco leite e espuma',
-      price: 3.50,
+      price: 3.5,
     },
     {
       id: 10,
@@ -131,7 +132,7 @@ export function CoffeeContextProvider({
       tags: ['Especial', 'Com Leite'],
       description:
         'Bebida feita com chocolate dissolvido no leite quente e café',
-      price: 3.50,
+      price: 3.5,
     },
     {
       id: 11,
@@ -140,7 +141,7 @@ export function CoffeeContextProvider({
       tags: ['Especial', 'Alcoólico', 'Gelado'],
       description:
         'Drink gelado de café expresso com rum, creme de leite e hortelã',
-      price: 3.90,
+      price: 3.9,
     },
     {
       id: 12,
@@ -148,7 +149,7 @@ export function CoffeeContextProvider({
       name: 'Havaiano',
       tags: ['Especial'],
       description: 'Bebida adocicada preparada com café e leite de coco',
-      price: 3.90,
+      price: 3.9,
     },
     {
       id: 13,
@@ -156,7 +157,7 @@ export function CoffeeContextProvider({
       name: 'Árabe',
       tags: ['Especial'],
       description: 'Bebida preparada com grãos de café árabe e especiarias',
-      price: 3.90,
+      price: 3.9,
     },
     {
       id: 14,
@@ -164,13 +165,14 @@ export function CoffeeContextProvider({
       name: 'Irlandês',
       tags: ['Especial', 'Alcoólico'],
       description: 'Bebida a base de café, uísque irlandês, açúcar e chantilly',
-      price: 3.90,
+      price: 3.9,
     },
   ])
   const [itemOrder, setItemOrder] = useState<itemOrderType[]>([])
   const [totalPrice, setTotalPrice] = useState(0)
   const [fretePrice, setFretePrice] = useState<number | 'Grátis'>(0)
   const [totalOrderPrice, setTotalOrderPrice] = useState(0)
+  const [quantidadeTotal, setQuantidadeTotal] = useState(0)
 
   function handleInputOrderSubmit(
     imagem: string,
@@ -184,9 +186,11 @@ export function CoffeeContextProvider({
   useEffect(() => {
     itemOrder.map((item) => {
       setTotalPrice((state) => state + item.price * item.quantidade)
+      setQuantidadeTotal((state) => state + item.quantidade)
     })
     return function cleanup() {
       setTotalPrice(0)
+      setQuantidadeTotal(0)
     }
   }, [itemOrder])
 
@@ -221,6 +225,7 @@ export function CoffeeContextProvider({
   return (
     <OrderCoffeeContext.Provider
       value={{
+        quantidadeTotal,
         setItemOrder,
         totalOrderPrice,
         fretePrice,
