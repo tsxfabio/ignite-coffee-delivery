@@ -1,5 +1,11 @@
 import styled from 'styled-components'
 
+const cores = {
+  'purple-500': '#8047F8',
+  'yellow-500': '#DBAC2C',
+  'yellow-700': '#C47F17',
+}
+
 export const DetalhesDaCompraContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -34,8 +40,11 @@ export const DetalhesPedidoContainer = styled.div`
   padding: 2.5rem;
 
   border: 1px solid red;
-`
 
-export const IconeDetalhesCard = styled.div.attrs((props) => ({
-  background: props.background,
-}))``
+  .cardDetalhes {
+    display: flex;
+    flex-direction: row;
+
+    margin-bottom: 2rem;
+  }
+`
