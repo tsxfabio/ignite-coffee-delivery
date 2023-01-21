@@ -23,8 +23,8 @@ Páginas:
 Features/Características:
 
 - [x] Apresenta uma lista de cafés, com seus respectivos valores.
-- [x] Usuário poderá escolher um tipo de café por vez e adicional de 1 a 20 unidades ao carrinho.
-- [x] No carrinho o usuário pode alterar a quantidade de cafés (respeitando o máximo de 20 unidades).
+- [x] Usuário poderá escolher um tipo de café por vez e adicionar de 1 a 20 unidades ao carrinho.
+- [x] No carrinho o usuário pode alterar a quantidade de cafés (respeitando o mínimo de 1 e o máximo de 20 unidades).
 - [x] No carrinho o usuário pode remover os cafés.
 - [x] O frete é calculado de acordo com a quantidade de itens e para compras acima de R$ 50,00 o frete é grátis.
 - [x] Caso o usuário já tenha add um tipo de café, ele só poderá alterar a quantidade ou remover o item ná pagina '/carrinho'
