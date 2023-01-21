@@ -29,6 +29,12 @@ export const DetalhesDaCompraContainer = styled.div`
 
     color: ${(props) => props.theme['gray-700']};
   }
+
+  .rowContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 `
 
 export const DetalhesPedidoContainer = styled.div`
@@ -47,4 +53,11 @@ export const DetalhesPedidoContainer = styled.div`
 
     margin-bottom: 2rem;
   }
+`
+
+export const ImagemPedidoContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+  width: 48%;
 `
