@@ -1,4 +1,5 @@
 import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react'
+import { IconesStyles } from '../../../../components/IconesStyles/IconesStyles.index'
 import { HeaderContainer } from './styles'
 
 export function Header() {
@@ -13,21 +14,33 @@ export function Header() {
         <div className="iconAndDescriptionHeader">
           <div className="list1th">
             <div className="listContainer">
-              <ShoppingCart size={22} weight="fill" className="cartIcon" />
+              <IconesStyles
+                backgroundVariant="yellowSecondary"
+                content={<ShoppingCart size={22} weight="fill" />}
+              />
               <span>Compra simples e segura</span>
             </div>
             <div className="listContainer">
-              <Timer size={22} weight="fill" className="timerIcon" />
+              <IconesStyles
+                backgroundVariant="yellowPrimary"
+                content={<Timer size={22} weight="fill" />}
+              />
               <span>Embalagem mantém o café intacto</span>
             </div>
           </div>
           <div className="list2th">
             <div className="listContainer">
-              <Package size={22} weight="fill" className="packageIcon" />
+              <IconesStyles
+                backgroundVariant="grayPrimary"
+                content={<Package size={22} weight="fill" />}
+              />
               <span>Embalagem mantém o café intacto</span>
             </div>
             <div className="listContainer">
-              <Coffee size={22} weight="fill" className="coffeeIcon" />
+              <IconesStyles
+                backgroundVariant="purplePrimary"
+                content={<Coffee size={22} weight="fill" />}
+              />
               <span>O café chega fresquinho até você</span>
             </div>
           </div>

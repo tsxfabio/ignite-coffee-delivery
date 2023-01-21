@@ -17,13 +17,13 @@ export function DetalhesDaCompra() {
           </div>
           <div className="cardDetalhes">
             <IconesStyles
-              variant="yellowPrimary"
+              backgroundVariant="yellowPrimary"
               content={<Timer size={16} weight="fill" />}
             />
           </div>
           <div className="cardDetalhes">
             <IconesStyles
-              variant="yellowSecondary"
+              backgroundVariant="yellowSecondary"
               content={<CurrencyDollar size={16} weight="fill" />}
             />
           </div>

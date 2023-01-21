@@ -32,34 +32,6 @@ export const HeaderContainer = styled.header`
           flex-direction: row;
           align-items: center;
           margin-bottom: 1.25rem;
-          .cartIcon {
-            box-sizing: content-box;
-            border-radius: 50%;
-            padding: 0.5rem;
-            color: ${(props) => props.theme['white-100']};
-            background-color: ${(props) => props.theme['yellow-700']};
-          }
-          .timerIcon {
-            box-sizing: content-box;
-            border-radius: 50%;
-            padding: 0.5rem;
-            color: ${(props) => props.theme['white-100']};
-            background-color: ${(props) => props.theme['yellow-500']};
-          }
-          .packageIcon {
-            box-sizing: content-box;
-            border-radius: 50%;
-            padding: 0.5rem;
-            color: ${(props) => props.theme['white-100']};
-            background-color: ${(props) => props.theme['gray-600']};
-          }
-          .coffeeIcon {
-            box-sizing: content-box;
-            border-radius: 50%;
-            padding: 0.5rem;
-            color: ${(props) => props.theme['white-100']};
-            background-color: ${(props) => props.theme['purple-500']};
-          }
           span {
             font-family: 'Roboto', sans-serif;
             font-size: 1rem;

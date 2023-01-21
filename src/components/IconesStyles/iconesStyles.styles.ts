@@ -1,25 +1,36 @@
 import { defaultTheme } from '../../styles/themes/default'
 import styled from 'styled-components'
 
-export type IconesVariant =
+export type colorIconesVariant = 'white' | 'gray'
+
+export type BackgroundIconesVariant =
   | 'purplePrimary'
   | 'yellowPrimary'
   | 'yellowSecondary'
+  | 'grayPrimary'
 
 interface IconesStylesProps {
-  variant: IconesVariant
+  backgroundVariant: BackgroundIconesVariant
+  colorVariant?: colorIconesVariant
 }
 
-const iconesVariants = {
+const colorIconesVariants = {
+  white: defaultTheme['white-100'],
+  gray: defaultTheme['gray-500'],
+}
+
+const backgroundIconesVariants = {
   purplePrimary: defaultTheme['purple-500'],
   yellowPrimary: defaultTheme['yellow-500'],
   yellowSecondary: defaultTheme['yellow-700'],
+  grayPrimary: defaultTheme['gray-600'],
 }
 
 export const IconesStylesContainer = styled.div<IconesStylesProps>`
   display: inline-flex;
+  box-sizing: content-box;
   padding: 0.5rem;
   border-radius: 50%;
-  color: ${(props) => props.theme['white-100']};
-  background: ${(props) => iconesVariants[props.variant]};
+  color: ${(props) => colorIconesVariants[props.colorVariant || 'white']};
+  background: ${(props) => backgroundIconesVariants[props.backgroundVariant]};
 `

@@ -1,15 +1,22 @@
-import { IconesStylesContainer, IconesVariant } from './iconesStyles.styles'
+import {
+  IconesStylesContainer,
+  BackgroundIconesVariant,
+  colorIconesVariant,
+} from './iconesStyles.styles'
 
 interface IconesStylesProps {
-  variant?: IconesVariant
+  colorVariant?: colorIconesVariant
+  backgroundVariant?: BackgroundIconesVariant
   content?: any
 }
 
 export function IconesStyles({
-  variant = 'purplePrimary',
+  backgroundVariant = 'purplePrimary',
   content,
 }: IconesStylesProps) {
   return (
-    <IconesStylesContainer variant={variant}>{content}</IconesStylesContainer>
+    <IconesStylesContainer backgroundVariant={backgroundVariant}>
+      {content}
+    </IconesStylesContainer>
   )
 }
