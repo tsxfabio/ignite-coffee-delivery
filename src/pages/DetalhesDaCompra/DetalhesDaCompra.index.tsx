@@ -1,5 +1,6 @@
 import { CurrencyDollar, MapPin, Timer } from 'phosphor-react'
 import { IconesStyles } from '../../components/IconesStyles/IconesStyles.index'
+import { UseFormRegister } from 'react-hook-form'
 import {
   DetalhesDaCompraContainer,
   DetalhesPedidoContainer,
