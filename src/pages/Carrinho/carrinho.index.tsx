@@ -11,7 +11,6 @@ import { CoffeeCardHorizontal } from '../../components/CoffeeCardHorizontal/Coff
 import { Titles } from '../../components/Titles/Titles.index'
 import { OrderCoffeeContext } from '../../contexts/CoffeeContext'
 import { PageContainer } from './carrinho.styles'
-import { FormEndereco } from './FormEndereco/FormEndereco.index'
 
 interface Pagamentos {
   credito: boolean
@@ -70,9 +69,9 @@ export function Carrinho() {
   const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data)
 
   return (
-    <PageContainer>
-      <div className="dadosPedido">
-        <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <PageContainer>
+        <div className="dadosPedido">
           <Titles title="Complete seu pedido" subtitle={true} />
           <div className="simpleContainer">
             <div className="titleContainerEndereco">
@@ -157,7 +156,6 @@ export function Carrinho() {
                   toggleClass('credito')
                   resetField('pagamento')
                   setValue('pagamento.credito', true)
-                  console.log(getValues().pagamento)
                 }}
                 className={isActive.credito ? 'active' : undefined}
                 {...register('pagamento.credito', {
@@ -173,7 +171,6 @@ export function Carrinho() {
                   toggleClass('debito')
                   resetField('pagamento')
                   setValue('pagamento.debito', true)
-                  console.log(getValues().pagamento)
                 }}
                 className={isActive.debito ? 'active' : undefined}
                 {...register('pagamento.debito', {
@@ -189,7 +186,6 @@ export function Carrinho() {
                   toggleClass('dinheiro')
                   resetField('pagamento')
                   setValue('pagamento.dinheiro', true)
-                  console.log(getValues().pagamento)
                 }}
                 className={isActive.dinheiro ? 'active' : undefined}
                 {...register('pagamento.dinheiro', {
@@ -199,57 +195,56 @@ export function Carrinho() {
                 <Money size={22} className="iconsPagamento" />
                 <span>Dinheiro</span>
               </button>
-              <button type="submit"></button>
             </div>
-          </div>
-        </form>
-      </div>
-      <div className="confirmacaoPedido">
-        <Titles title="Cafés selecionados" subtitle={true} />
-        <div className="confirmacaoPagamentoContainer">
-          {itemOrder.map((item) => {
-            return (
-              <CoffeeCardHorizontal
-                key={item.name}
-                img={item.imagem}
-                name={item.name}
-                valor={item.price}
-                quantidade={item.quantidade}
-              />
-            )
-          })}
-          <div className="resumoValor">
-            <div>
-              <span>Total de itens</span>
-              <span>
-                {totalPrice.toLocaleString('pt-br', {
-                  style: 'currency',
-                  currency: 'BRL',
-                })}
-              </span>
-            </div>
-            <div>
-              <span>Frete</span>
-              <span>
-                {fretePrice.toLocaleString('pt-br', {
-                  style: 'currency',
-                  currency: 'BRL',
-                })}
-              </span>
-            </div>
-            <div>
-              <span>Total</span>
-              <span>
-                {totalOrderPrice.toLocaleString('pt-br', {
-                  style: 'currency',
-                  currency: 'BRL',
-                })}
-              </span>
-            </div>
-            <button type="submit">Confirmar Pedido</button>
           </div>
         </div>
-      </div>
-    </PageContainer>
+        <div className="confirmacaoPedido">
+          <Titles title="Cafés selecionados" subtitle={true} />
+          <div className="confirmacaoPagamentoContainer">
+            {itemOrder.map((item) => {
+              return (
+                <CoffeeCardHorizontal
+                  key={item.name}
+                  img={item.imagem}
+                  name={item.name}
+                  valor={item.price}
+                  quantidade={item.quantidade}
+                />
+              )
+            })}
+            <div className="resumoValor">
+              <div>
+                <span>Total de itens</span>
+                <span>
+                  {totalPrice.toLocaleString('pt-br', {
+                    style: 'currency',
+                    currency: 'BRL',
+                  })}
+                </span>
+              </div>
+              <div>
+                <span>Frete</span>
+                <span>
+                  {fretePrice.toLocaleString('pt-br', {
+                    style: 'currency',
+                    currency: 'BRL',
+                  })}
+                </span>
+              </div>
+              <div>
+                <span>Total</span>
+                <span>
+                  {totalOrderPrice.toLocaleString('pt-br', {
+                    style: 'currency',
+                    currency: 'BRL',
+                  })}
+                </span>
+              </div>
+              <button type="submit">Confirmar Pedido</button>
+            </div>
+          </div>
+        </div>
+      </PageContainer>
+    </form>
   )
 }
