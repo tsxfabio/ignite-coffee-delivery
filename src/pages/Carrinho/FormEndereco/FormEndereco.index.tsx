@@ -12,25 +12,68 @@ type Inputs = {
 }
 
 export function FormEndereco() {
-  const { register } = useForm<Inputs>()
+  const { register, handleSubmit, watch } = useForm<Inputs>()
+  const onSubmit = (data: Inputs) => console.log(data)
+  console.log(watch('cep'))
 
   return (
     <div>
-      <FromContainer>
-        <input id="cep" placeholder="CEP" {...register('cep')} />
-        <input id="rua" placeholder="Rua" {...register('rua')} />
+      <FromContainer onSubmit={handleSubmit(onSubmit)}>
+        <input
+          id="cep"
+          placeholder="CEP"
+          required
+          {...register('cep', { required: true })}
+        />
+        <input
+          id="rua"
+          placeholder="Logradouro"
+          {...register('rua')}
+          required
+        />
         <div>
-          <input id="numero" placeholder="Número" {...register('numero')} />
+          <input
+            id="numero"
+            placeholder="Número"
+            {...register('numero', { required: true })}
+            required
+          />
           <input
             id="complemento"
             placeholder="Complemento"
             {...register('complemento')}
           />
         </div>
+        <input
+          id="numero"
+          placeholder="Número"
+          {...register('numero', { required: true })}
+          required
+        />
+        <input
+          id="complemento"
+          placeholder="Complemento"
+          {...register('complemento')}
+        />
         <div>
-          <input id="bairro" placeholder="Bairro" {...register('bairro')} />
-          <input id="cidade" placeholder="Cidade" {...register('cidade')} />
-          <input id="uf" placeholder="UF" {...register('uf')} />
+          <input
+            id="bairro"
+            placeholder="Bairro"
+            {...register('bairro', { required: true })}
+            required
+          />
+          <input
+            id="cidade"
+            placeholder="Cidade"
+            {...register('cidade', { required: true })}
+            required
+          />
+          <input
+            id="uf"
+            placeholder="UF"
+            {...register('uf', { required: true })}
+            required
+          />
         </div>
       </FromContainer>
     </div>

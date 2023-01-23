@@ -20,6 +20,58 @@ export const PageContainer = styled.main`
       padding: 2.5rem;
       background-color: ${(props) => props.theme['gray-100']};
 
+      input {
+        padding: 0.75rem;
+        border: 1px solid ${(props) => props.theme['gray-300']};
+        background-color: ${(props) => props.theme['gray-300']};
+        border-radius: 4px;
+      }
+
+      //Fomrulário de endereço e Pagamento
+      .inputColum {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+        gap: 1rem;
+
+        #cep {
+          width: 30%;
+        }
+
+        #rua {
+          width: 100%;
+        }
+      }
+
+      .inputRow {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 1rem;
+        justify-content: space-between;
+        //gap: 1rem;
+
+        #numero {
+          width: 30%;
+        }
+
+        #complemento {
+          width: 68%;
+        }
+
+        #bairro {
+          width: 30%;
+        }
+
+        #cidade {
+          width: 50%;
+        }
+
+        #uf {
+          width: 15%;
+        }
+      }
+      //Fomrulário de endereço e Pagamento
+
       .titleContainerEndereco {
         display: flex;
         flex-direction: row;
