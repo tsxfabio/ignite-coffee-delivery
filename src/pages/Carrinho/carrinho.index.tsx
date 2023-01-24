@@ -51,19 +51,6 @@ export function Carrinho() {
     debito: false,
     dinheiro: false,
   })
-  const [fullOrder, setFullOrder] = useState<FullOrder>({
-    itemOrder: [],
-    endereco: {
-      cep: 0,
-      rua: '',
-      numero: 0,
-      complemento: '',
-      bairro: '',
-      cidade: '',
-      uf: '',
-      pagamento: { credito: false, debito: false, dinheiro: false },
-    },
-  })
 
   function toggleClass(opcao: string) {
     //clearStatusPagamento()
@@ -97,10 +84,16 @@ export function Carrinho() {
     <form onSubmit={handleSubmit(onSubmit)}>
       <PageContainer>
         <div className="dadosPedido">
-          <Titles title="Complete seu pedido" subtitle={true} />
+          <Titles
+            title="Complete seu pedido"
+            subtitle={true}
+          />
           <div className="simpleContainer">
             <div className="titleContainerEndereco">
-              <MapPinLine size={22} className="iconsEndereco" />
+              <MapPinLine
+                size={22}
+                className="iconsEndereco"
+              />
               <div>
                 <span>Endereço de Entrega</span>
                 <span>Informe o endereço onde deseja receber seu pedido</span>
@@ -164,7 +157,10 @@ export function Carrinho() {
           </div>
           <div className="metodoPagamentoContainer">
             <div className="titlemetodoPagamentoContainer">
-              <CurrencyDollar size={22} className="iconsPagamento" />
+              <CurrencyDollar
+                size={22}
+                className="iconsPagamento"
+              />
               <div>
                 <span>Pagamento</span>
                 <span>
@@ -187,7 +183,10 @@ export function Carrinho() {
                   required: !getValues().pagamento,
                 })}
               >
-                <CreditCard size={22} className="iconsPagamento" />
+                <CreditCard
+                  size={22}
+                  className="iconsPagamento"
+                />
                 <span>Cartão de Crédito</span>
               </button>
               <button
@@ -202,7 +201,10 @@ export function Carrinho() {
                   required: !getValues().pagamento,
                 })}
               >
-                <Bank size={22} className="iconsPagamento" />
+                <Bank
+                  size={22}
+                  className="iconsPagamento"
+                />
                 <span>Cartão de Débito</span>
               </button>
               <button
@@ -217,14 +219,20 @@ export function Carrinho() {
                   required: !getValues().pagamento,
                 })}
               >
-                <Money size={22} className="iconsPagamento" />
+                <Money
+                  size={22}
+                  className="iconsPagamento"
+                />
                 <span>Dinheiro</span>
               </button>
             </div>
           </div>
         </div>
         <div className="confirmacaoPedido">
-          <Titles title="Cafés selecionados" subtitle={true} />
+          <Titles
+            title="Cafés selecionados"
+            subtitle={true}
+          />
           <div className="confirmacaoPagamentoContainer">
             {itemOrder.map((item) => {
               return (

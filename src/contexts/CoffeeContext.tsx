@@ -49,6 +49,7 @@ export const OrderCoffeeContext = createContext({} as orderCoffeeType)
 export function CoffeeContextProvider({
   children,
 }: CoffeeContextProviderProps) {
+  //Registro dos Cafés e seus valores
   const [coffees, setCoffees] = useState<CoffeesType[]>([
     {
       id: 1,
