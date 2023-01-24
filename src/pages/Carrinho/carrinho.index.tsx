@@ -7,6 +7,7 @@ import {
 } from 'phosphor-react'
 import { useContext, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
+import { useNavigation } from 'react-router-dom'
 import { CoffeeCardHorizontal } from '../../components/CoffeeCardHorizontal/CoffeeCardHorizontal.index'
 import { Titles } from '../../components/Titles/Titles.index'
 import { OrderCoffeeContext } from '../../contexts/CoffeeContext'
@@ -18,7 +19,7 @@ interface Pagamentos {
   dinheiro: boolean
 }
 
-type Inputs = {
+interface Inputs {
   cep: number
   rua: string
   numero: number
@@ -29,8 +30,19 @@ type Inputs = {
   pagamento: Pagamentos
 }
 
+interface itemOrderType {
+  name: string
+  price: number
+  quantidade: number
+}
+
+interface FullOrder {
+  itemOrder: itemOrderType[]
+  endereco: Inputs
+}
+
 export function Carrinho() {
-  const { register, setValue, getValues, resetField, handleSubmit } =
+  const { register, setValue, getValues, resetField, handleSubmit, formState } =
     useForm<Inputs>()
   const { itemOrder, totalPrice, fretePrice, totalOrderPrice } =
     useContext(OrderCoffeeContext)
@@ -38,6 +50,19 @@ export function Carrinho() {
     credito: false,
     debito: false,
     dinheiro: false,
+  })
+  const [fullOrder, setFullOrder] = useState<FullOrder>({
+    itemOrder: [],
+    endereco: {
+      cep: 0,
+      rua: '',
+      numero: 0,
+      complemento: '',
+      bairro: '',
+      cidade: '',
+      uf: '',
+      pagamento: { credito: false, debito: false, dinheiro: false },
+    },
   })
 
   function toggleClass(opcao: string) {
@@ -240,7 +265,19 @@ export function Carrinho() {
                   })}
                 </span>
               </div>
-              <button type="submit">Confirmar Pedido</button>
+              <button
+                type="button"
+                onClick={() => {
+                  handleSubmit((data) => {
+                    console.log(data)
+                  })()
+                  formState.isValid
+                    ? console.log('valido')
+                    : console.log('invalido')
+                }}
+              >
+                Confirmar Pedido
+              </button>
             </div>
           </div>
         </div>
