@@ -52,6 +52,20 @@ export const DetalhesPedidoContainer = styled.div`
     flex-direction: row;
 
     margin-bottom: 2rem;
+
+    .cardDetalhesIcon {
+      margin-right: 0.75rem;
+    }
+
+    .cardDetalhesText {
+      display: flex;
+      flex-direction: column;
+
+      span {
+        font-style: 'Roboto', sans-serif;
+        font-size: 1rem;
+      }
+    }
   }
 `
 

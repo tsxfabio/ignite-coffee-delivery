@@ -7,7 +7,7 @@ import {
 } from 'phosphor-react'
 import { useContext, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
-import { useNavigation } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { CoffeeCardHorizontal } from '../../components/CoffeeCardHorizontal/CoffeeCardHorizontal.index'
 import { Titles } from '../../components/Titles/Titles.index'
 import { OrderCoffeeContext } from '../../contexts/CoffeeContext'
@@ -30,27 +30,20 @@ interface Inputs {
   pagamento: Pagamentos
 }
 
-interface itemOrderType {
-  name: string
-  price: number
-  quantidade: number
-}
-
-interface FullOrder {
-  itemOrder: itemOrderType[]
-  endereco: Inputs
-}
-
 export function Carrinho() {
+  const { itemOrder, totalPrice, fretePrice, totalOrderPrice, setEndereco } =
+    useContext(OrderCoffeeContext)
+
   const { register, setValue, getValues, resetField, handleSubmit, formState } =
     useForm<Inputs>()
-  const { itemOrder, totalPrice, fretePrice, totalOrderPrice } =
-    useContext(OrderCoffeeContext)
+
   const [isActive, setActive] = useState<Pagamentos>({
     credito: false,
     debito: false,
     dinheiro: false,
   })
+
+  const navigate = useNavigate()
 
   function toggleClass(opcao: string) {
     //clearStatusPagamento()
@@ -78,7 +71,10 @@ export function Carrinho() {
     }
   }
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data)
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    setEndereco(data)
+    navigate('/detalhes-da-compra')
+  }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -273,19 +269,7 @@ export function Carrinho() {
                   })}
                 </span>
               </div>
-              <button
-                type="button"
-                onClick={() => {
-                  handleSubmit((data) => {
-                    console.log(data)
-                  })()
-                  formState.isValid
-                    ? console.log('valido')
-                    : console.log('invalido')
-                }}
-              >
-                Confirmar Pedido
-              </button>
+              <button type="submit">Confirmar Pedido</button>
             </div>
           </div>
         </div>

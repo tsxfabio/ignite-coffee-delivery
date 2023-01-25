@@ -29,6 +29,7 @@ const backgroundIconesVariants = {
 export const IconesStylesContainer = styled.div<IconesStylesProps>`
   display: inline-flex;
   box-sizing: content-box;
+  block-size: fit-content;
   padding: 0.5rem;
   border-radius: 50%;
   color: ${(props) => colorIconesVariants[props.colorVariant || 'white']};
