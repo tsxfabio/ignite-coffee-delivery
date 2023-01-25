@@ -31,6 +31,7 @@ export interface EndereçoInputsType {
   bairro: string
   cidade: string
   uf: string
+  pagamento: any
 }
 
 export interface orderCoffeeType {

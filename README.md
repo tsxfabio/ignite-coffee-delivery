@@ -18,7 +18,7 @@ Páginas:
 
 - [x] Home
 - [x] Carrinho
-- [ ] Detalhes da Compra
+- [x] Detalhes da Compra
 
 Features/Características:
 
@@ -36,8 +36,8 @@ Features/Características:
 - [x] Função: Aumentar/Diminuir quantidade de itens adicionados no carrinho.
 - [x] Função: Remover os itens adicionados no carrinho.
 - [x] Ícone com a quantidade de unidades adicionadas no carrinho.
+- [x] Validação do formulário.
 - [ ] Ajustar a animação do botão ao clicar para adicionar itens ao carrinho, aumentar ou diminuir a quantidade de itens.
-- [ ] Validação do formulário.
 - [ ] Modal de sucesso/falha de item adicionado ao carrinho. (atualmente um alert básico do js)
 - [ ] Ajustar a responsividade.
 - [ ] Refatorar o código utilizando reduce.
