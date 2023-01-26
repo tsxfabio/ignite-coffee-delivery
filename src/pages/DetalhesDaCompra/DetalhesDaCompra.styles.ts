@@ -46,6 +46,7 @@ export const DetalhesPedidoContainer = styled.div`
   padding: 2.5rem;
 
   border: 1px solid red;
+  border-radius: 6px 36px;
 
   .cardDetalhes {
     display: flex;

@@ -31,17 +31,18 @@ interface Inputs {
 }
 
 export function Carrinho() {
-  const { itemOrder, totalPrice, fretePrice, totalOrderPrice, setEndereco } =
-    useContext(OrderCoffeeContext)
+  const {
+    itemOrder,
+    totalPrice,
+    fretePrice,
+    totalOrderPrice,
+    setEndereco,
+    pagamento,
+    setPagamento,
+  } = useContext(OrderCoffeeContext)
 
   const { register, setValue, getValues, resetField, handleSubmit, formState } =
     useForm<Inputs>()
-
-  const [isActive, setActive] = useState<Pagamentos>({
-    credito: false,
-    debito: false,
-    dinheiro: false,
-  })
 
   const navigate = useNavigate()
 
@@ -49,24 +50,24 @@ export function Carrinho() {
     //clearStatusPagamento()
     switch (opcao) {
       case 'credito':
-        setActive({
-          credito: !isActive.credito,
+        setPagamento({
+          credito: !pagamento.credito,
           debito: false,
           dinheiro: false,
         })
         break
       case 'debito':
-        setActive({
+        setPagamento({
           credito: false,
-          debito: !isActive.debito,
+          debito: !pagamento.debito,
           dinheiro: false,
         })
         break
       case 'dinheiro':
-        setActive({
+        setPagamento({
           credito: false,
           debito: false,
-          dinheiro: !isActive.dinheiro,
+          dinheiro: !pagamento.dinheiro,
         })
     }
   }
@@ -172,10 +173,15 @@ export function Carrinho() {
                 onClick={() => {
                   toggleClass('credito')
                   resetField('pagamento')
-                  setValue('pagamento.credito', true)
+                  setPagamento({
+                    credito: true,
+                    debito: false,
+                    dinheiro: false,
+                  })
+                  setValue('pagamento', pagamento)
                 }}
-                className={isActive.credito ? 'active' : undefined}
-                {...register('pagamento.credito', {
+                className={pagamento.credito ? 'active' : undefined}
+                {...register('pagamento', {
                   required: !getValues().pagamento,
                 })}
               >
@@ -190,10 +196,15 @@ export function Carrinho() {
                 onClick={() => {
                   toggleClass('debito')
                   resetField('pagamento')
-                  setValue('pagamento.debito', true)
+                  setPagamento({
+                    credito: false,
+                    debito: true,
+                    dinheiro: false,
+                  })
+                  setValue('pagamento', pagamento)
                 }}
-                className={isActive.debito ? 'active' : undefined}
-                {...register('pagamento.debito', {
+                className={pagamento.debito ? 'active' : undefined}
+                {...register('pagamento', {
                   required: !getValues().pagamento,
                 })}
               >
@@ -208,10 +219,15 @@ export function Carrinho() {
                 onClick={() => {
                   toggleClass('dinheiro')
                   resetField('pagamento')
-                  setValue('pagamento.dinheiro', true)
+                  setPagamento({
+                    credito: false,
+                    debito: false,
+                    dinheiro: true,
+                  })
+                  setValue('pagamento', pagamento)
                 }}
-                className={isActive.dinheiro ? 'active' : undefined}
-                {...register('pagamento.dinheiro', {
+                className={pagamento.dinheiro ? 'active' : undefined}
+                {...register('pagamento', {
                   required: !getValues().pagamento,
                 })}
               >

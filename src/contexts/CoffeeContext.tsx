@@ -34,6 +34,12 @@ export interface EndereçoInputsType {
   pagamento: any
 }
 
+export interface Pagamentos {
+  credito: boolean
+  debito: boolean
+  dinheiro: boolean
+}
+
 export interface orderCoffeeType {
   coffees: CoffeesType[]
   itemOrder: itemOrderType[]
@@ -42,6 +48,8 @@ export interface orderCoffeeType {
   totalOrderPrice: number
   quantidadeTotal: number
   endereco: EndereçoInputsType | undefined
+  pagamento: Pagamentos
+  setPagamento: (pagamento: Pagamentos) => void
   setEndereco: (endereco: EndereçoInputsType) => void
   setItemOrder: (item: itemOrderType[]) => void
   handleInputOrderSubmit: (
@@ -188,6 +196,11 @@ export function CoffeeContextProvider({
   const [fretePrice, setFretePrice] = useState<number | 'Grátis'>(0)
   const [totalOrderPrice, setTotalOrderPrice] = useState(0)
   const [quantidadeTotal, setQuantidadeTotal] = useState(0)
+  const [pagamento, setPagamento] = useState<Pagamentos>({
+    credito: false,
+    debito: false,
+    dinheiro: false,
+  })
 
   function handleInputOrderSubmit(
     imagem: string,
@@ -241,6 +254,8 @@ export function CoffeeContextProvider({
   return (
     <OrderCoffeeContext.Provider
       value={{
+        pagamento,
+        setPagamento,
         endereco,
         setEndereco,
         quantidadeTotal,

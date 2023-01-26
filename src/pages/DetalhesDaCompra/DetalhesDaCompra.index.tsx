@@ -10,7 +10,18 @@ import { useContext } from 'react'
 import { OrderCoffeeContext } from '../../contexts/CoffeeContext'
 
 export function DetalhesDaCompra() {
-  const { endereco } = useContext(OrderCoffeeContext)
+  const { endereco, pagamento } = useContext(OrderCoffeeContext)
+
+  function pagamentos() {
+    switch (true) {
+      case pagamento.credito:
+        return 'Cartão de Crédito'
+      case pagamento.debito:
+        return 'Cartão de Débito'
+      case pagamento.dinheiro:
+        return 'Dinheiro'
+    }
+  }
 
   return (
     <DetalhesDaCompraContainer>
@@ -74,7 +85,9 @@ export function DetalhesDaCompra() {
             </div>
             <div className="cardDetalhesText">
               <span>Pagamento na Entrega</span>
-              <span></span>
+              <span>
+                <strong>{pagamentos()}</strong>
+              </span>
             </div>
           </div>
         </DetalhesPedidoContainer>
