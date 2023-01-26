@@ -31,13 +31,13 @@ export function DetalhesDaCompra() {
             </div>
             <div className="cardDetalhesText">
               <span>
-                Entrega em{' '}
+                Entrega em {''}
                 <strong>
                   {endereco?.rua}, {endereco?.numero}
                 </strong>
               </span>
               <span>
-                {endereco?.bairro} - {endereco?.uf}
+                {endereco?.bairro} - {endereco?.cidade}, {endereco?.uf}
               </span>
             </div>
           </div>
