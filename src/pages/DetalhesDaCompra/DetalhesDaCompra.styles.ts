@@ -11,7 +11,6 @@ export const DetalhesDaCompraContainer = styled.div`
   flex-direction: column;
 
   margin-top: 5rem;
-  border: 1px solid red;
 
   h3 {
     font-family: 'Baloo 2', cursive;
@@ -45,8 +44,10 @@ export const DetalhesPedidoContainer = styled.div`
   margin-top: 2.5rem;
   padding: 2.5rem;
 
-  border: 1px solid red;
+  background: linear-gradient(#fafafa, #fafafa) padding-box,
+    linear-gradient(to right, #dbac2c, #8047f8) border-box;
   border-radius: 6px 36px;
+  border: 1.5px solid transparent;
 
   .cardDetalhes {
     display: flex;
