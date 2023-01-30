@@ -12,6 +12,12 @@ export const HeaderContainer = styled.header`
       font-family: 'Baloo 2', cursive;
       font-size: 3rem;
       line-height: 3.875rem;
+
+      @media (max-width: 768px) {
+        font-size: 2.5rem;
+        line-height: 3rem;
+        text-align: center;
+      }
     }
     span {
       font-family: 'Roboto', sans-serif;
@@ -40,6 +46,9 @@ export const HeaderContainer = styled.header`
         }
       }
     }
+    @media (max-width: 768px) {
+      width: 100%;
+    }
   }
   .navbarImage {
     overflow: hidden;
@@ -51,5 +60,11 @@ export const HeaderContainer = styled.header`
       height: 90%;
       width: auto;
     }
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+  @media (max-width: 768px) {
+    padding: 1rem 0;
   }
 `

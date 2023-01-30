@@ -17,6 +17,7 @@ body {
   input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+  
 }
 
   max-width: 1440px;
@@ -25,6 +26,11 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 0.875rem;
   background: ${(props) => props.theme['white-200']};
+
+  @media (max-width: 768px) {
+   max-width: 768px;
+   padding: 0 1rem; 
+  }
 }
 
 `

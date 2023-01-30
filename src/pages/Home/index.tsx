@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import { CoffeeCard } from '../../components/CoffeeCard/CoffeeCard.index'
 import { Titles } from '../../components/Titles/Titles.index'
 import { OrderCoffeeContext } from '../../contexts/CoffeeContext'
-import { Header } from './components/Header'
+import { Header } from './components/Header/Header.index'
 import { MainContainer } from './styles'
 
 export function Home() {
