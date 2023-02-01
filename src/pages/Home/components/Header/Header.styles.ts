@@ -8,6 +8,15 @@ export const HeaderContainer = styled.header`
 
   .titleAndDescriptionHeader {
     width: 60%;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+
+    @media (min-width: 769px) and (max-width: 1444px) {
+      width: 100%;
+    }
+
     h1 {
       font-family: 'Baloo 2', cursive;
       font-size: 3rem;
@@ -74,9 +83,6 @@ export const HeaderContainer = styled.header`
         }
       }
     }
-    @media (max-width: 768px) {
-      width: 100%;
-    }
   }
   .navbarImage {
     overflow: hidden;
@@ -89,6 +95,10 @@ export const HeaderContainer = styled.header`
       width: auto;
     }
     @media (max-width: 768px) {
+      display: none;
+    }
+
+    @media (min-width: 769px) and (max-width: 1444px) {
       display: none;
     }
   }
