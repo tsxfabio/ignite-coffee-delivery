@@ -6,5 +6,9 @@ export const MainContainer = styled.main`
     justify-content: flex-start;
     gap: 1.5rem;
     flex-wrap: wrap;
+
+    @media (max-width: 768px) {
+      justify-content: center;
+    }
   }
 `
