@@ -14,7 +14,7 @@ export const HeaderContainer = styled.header`
     }
 
     @media (min-width: 769px) and (max-width: 1444px) {
-      width: 100%;
+      //width: 100%;
     }
 
     h1 {
@@ -85,13 +85,12 @@ export const HeaderContainer = styled.header`
     }
   }
   .navbarImage {
-    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 40%;
     img {
-      height: 90%;
+      height: auto;
       width: auto;
     }
     @media (max-width: 768px) {
@@ -99,7 +98,7 @@ export const HeaderContainer = styled.header`
     }
 
     @media (min-width: 769px) and (max-width: 1444px) {
-      display: none;
+      //display: none;
     }
   }
   @media (max-width: 768px) {

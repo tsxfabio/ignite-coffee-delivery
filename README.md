@@ -40,6 +40,9 @@ Features/Características:
 - [ ] Ajustar a animação do botão ao clicar para adicionar itens ao carrinho, aumentar ou diminuir a quantidade de itens.
 - [ ] Modal de sucesso/falha de item adicionado ao carrinho. (atualmente um alert básico do js)
 - [ ] Ajustar a responsividade.
+  - [x] Home
+  - [ ] Carrinho
+  - [ ] Detalhes da Compra
 - [ ] Refatorar o código utilizando reduce.
 - [ ] Refatorar o código aproveitando melhor o styled-component.
   - [x] Criação do componente para os Ícones.
