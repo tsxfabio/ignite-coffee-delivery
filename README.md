@@ -41,7 +41,7 @@ Features/Características:
 - [ ] Modal de sucesso/falha de item adicionado ao carrinho. (atualmente um alert básico do js)
 - [ ] Ajustar a responsividade.
   - [x] Home
-  - [ ] Carrinho
+  - [x] Carrinho
   - [ ] Detalhes da Compra
 - [ ] Refatorar o código utilizando reduce.
 - [ ] Refatorar o código aproveitando melhor o styled-component.

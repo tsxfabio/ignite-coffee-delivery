@@ -4,7 +4,7 @@ export const MainContainer = styled.main`
   div {
     display: flex;
     justify-content: flex-start;
-    gap: 1.5rem;
+    gap: 1rem;
     flex-wrap: wrap;
 
     @media (max-width: 768px) {

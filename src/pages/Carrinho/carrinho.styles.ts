@@ -6,10 +6,18 @@ export const PageContainer = styled.main`
   flex-direction: row;
   gap: 1rem;
 
+  @media (max-width: 1200px) {
+    flex-direction: column;
+  }
+
   .dadosPedido {
     display: flex;
     flex-direction: column;
     max-width: 60%;
+
+    @media (max-width: 1200px) {
+      max-width: 100%;
+    }
 
     .simpleContainer {
       display: flex;
@@ -139,6 +147,11 @@ export const PageContainer = styled.main`
         flex-direction: row;
         justify-content: space-between;
 
+        @media (max-width: 1200px) {
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+
         button {
           display: flex;
           flex-direction: row;
@@ -163,6 +176,10 @@ export const PageContainer = styled.main`
             border: 1px solid ${(props) => props.theme['purple-500']};
             background: ${(props) => props.theme['purple-100']};
           }
+
+          @media (max-width: 1200px) {
+            width: 100%;
+          }
         }
 
         .iconsPagamento {
@@ -176,6 +193,10 @@ export const PageContainer = styled.main`
     display: flex;
     flex-direction: column;
     width: 40%;
+
+    @media (max-width: 1200px) {
+      width: 100%;
+    }
 
     .confirmacaoPagamentoContainer {
       background-color: ${(props) => props.theme['gray-100']};

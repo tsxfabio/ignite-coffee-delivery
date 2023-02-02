@@ -90,8 +90,7 @@ export const HeaderContainer = styled.header`
     align-items: center;
     width: 40%;
     img {
-      height: auto;
-      width: auto;
+      width: 80%;
     }
     @media (max-width: 768px) {
       display: none;
