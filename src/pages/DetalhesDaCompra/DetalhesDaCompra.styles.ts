@@ -49,6 +49,10 @@ export const DetalhesPedidoContainer = styled.div`
   border-radius: 6px 36px;
   border: 1.5px solid transparent;
 
+  @media (max-width: 1100px) {
+    width: 100%;
+  }
+
   .cardDetalhes {
     display: flex;
     flex-direction: row;
@@ -76,4 +80,8 @@ export const ImagemPedidoContainer = styled.div`
   justify-content: center;
   margin-top: 2.5rem;
   width: 48%;
+
+  @media (max-width: 1100px) {
+    display: none;
+  }
 `
