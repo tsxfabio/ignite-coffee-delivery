@@ -70,11 +70,18 @@ export function CoffeeCard(props: CoffeeProviders) {
   return (
     <CardContainer>
       <div className="card-elements">
-        <img src={props.img} width="120px" height="120px" />
+        <img
+          src={props.img}
+          width="120px"
+          height="120px"
+        />
         <span className="tags">
           {props.tags.map((tag) => {
             return (
-              <span key={tag} className="tags-i">
+              <span
+                key={tag}
+                className="tags-i"
+              >
                 {tag}
               </span>
             )
@@ -112,14 +119,14 @@ export function CoffeeCard(props: CoffeeProviders) {
               onClick={setUp}
             />
           </div>
-          <div className="cartIcons">
+          <div
+            className="cartIcons"
+            onClick={() => addInCart(props.img, props.name, value, props.price)}
+          >
             <ShoppingCart
               size={22}
               weight="fill"
               id="shoppingCart"
-              onClick={() =>
-                addInCart(props.img, props.name, value, props.price)
-              }
             />
           </div>
         </div>

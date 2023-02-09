@@ -37,7 +37,7 @@ Features/Características:
 - [x] Função: Remover os itens adicionados no carrinho.
 - [x] Ícone com a quantidade de unidades adicionadas no carrinho.
 - [x] Validação do formulário.
-- [ ] Ajustar a animação do botão ao clicar para adicionar itens ao carrinho, aumentar ou diminuir a quantidade de itens.
+- [x] Ajustar a animação do botão ao clicar para adicionar itens ao carrinho, aumentar ou diminuir a quantidade de itens.
 - [ ] Modal de sucesso/falha de item adicionado ao carrinho. (atualmente um alert básico do js)
 - [x] Ajustar a responsividade.
   - [x] Home
