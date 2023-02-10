@@ -39,9 +39,6 @@ Features/Características:
 - [x] Validação do formulário.
 - [x] Ajustar a animação do botão ao clicar para adicionar itens ao carrinho, aumentar ou diminuir a quantidade de itens.
 - [x] Ajustar a responsividade.
-  - [x] Home
-  - [x] Carrinho
-  - [x] Detalhes da Compra
 - [ ] Modal de sucesso/falha de item adicionado ao carrinho. (atualmente um alert básico do js)
 - [ ] Refatorar o código utilizando reduce.
 - [ ] Refatorar o código aproveitando melhor o styled-component.
