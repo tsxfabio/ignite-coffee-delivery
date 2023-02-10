@@ -38,11 +38,10 @@ Features/Características:
 - [x] Ícone com a quantidade de unidades adicionadas no carrinho.
 - [x] Validação do formulário.
 - [x] Ajustar a animação do botão ao clicar para adicionar itens ao carrinho, aumentar ou diminuir a quantidade de itens.
-- [ ] Modal de sucesso/falha de item adicionado ao carrinho. (atualmente um alert básico do js)
 - [x] Ajustar a responsividade.
   - [x] Home
   - [x] Carrinho
   - [x] Detalhes da Compra
+- [ ] Modal de sucesso/falha de item adicionado ao carrinho. (atualmente um alert básico do js)
 - [ ] Refatorar o código utilizando reduce.
 - [ ] Refatorar o código aproveitando melhor o styled-component.
-  - [x] Criação do componente para os Ícones.

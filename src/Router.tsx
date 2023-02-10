@@ -8,10 +8,22 @@ import { Home } from './pages/Home'
 export function Router() {
   return (
     <Routes>
-      <Route path="/" element={<DefaultLayout />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/carrinho" element={<Carrinho />} />
-        <Route path="/detalhes-da-compra" element={<DetalhesDaCompra />} />
+      <Route
+        path="/"
+        element={<DefaultLayout />}
+      >
+        <Route
+          path="/"
+          element={<Home />}
+        />
+        <Route
+          path="/carrinho"
+          element={<Carrinho />}
+        />
+        <Route
+          path="/detalhes-da-compra"
+          element={<DetalhesDaCompra />}
+        />
       </Route>
     </Routes>
   )
